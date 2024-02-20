@@ -1,0 +1,38 @@
+.showcase {
+    height: 100vh;
+    img {
+        display: none;
+    }
+
+    @include lg {
+        img {
+            display: block;
+            float: right;
+        }
+
+        .showcase-text {
+            width: 40%;
+            padding-top: 8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 8rem;
+
+            p {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+
+            h6 {
+                padding-bottom: 4rem;
+            }
+        }
+    }
+
+    .container {
+
+        .logo-holder {
+            display: flex;
+            gap: 1.4rem;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.integrate {
+    padding-top: 5%;
+    padding-bottom: 5%;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .heading-holder {
+        text-align: center;
+        width: 65%;
+
+        .text-lg {
+            color: $gray-600;
+            margin-top: 2rem;
+        }
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+        grid-template-rows: repeat(auto-fit, minmax(10rem, 1fr));
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .grid-item {
+        padding: 1rem;
+    }
+
+    .img-holder {
+        height: 4rem;
+        margin-bottom: 1rem;
+    }
+}

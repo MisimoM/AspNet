@@ -1,0 +1,38 @@
+.app {
+    background-color: $gray-100;
+
+    .container {
+        background-color: $gray-200;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    h2 {
+        width: 70%;
+    }
+
+    .text-holder {
+        margin-top: 6%;
+        width: 30%;
+        align-self: flex-start;
+    }
+
+    .rating {
+        padding-top: 4rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .store {
+        display: flex;
+        gap: 3rem;
+
+        img {
+            width: 35%;
+            align-self: flex-end;
+        }
+    }
+}

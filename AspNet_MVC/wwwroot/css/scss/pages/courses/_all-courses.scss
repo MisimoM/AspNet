@@ -1,0 +1,23 @@
+.all-courses {
+
+    .container {
+
+    }
+
+    .text-holder {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .input-holder {
+        display: flex;
+    }
+
+    input {
+        width: 100%;
+        border-radius: 5px;
+        border: 1px $gray-400 solid;
+        padding-top: 0.7rem;
+        padding-bottom: 0.7rem;
+    }
+}

@@ -1,0 +1,66 @@
+.subscribe {
+    background-color: $gray-200;
+    padding-top: 5%;
+    padding-bottom: 5%;
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content-holder {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .title-holder {
+        display: flex;
+
+        h1 {
+            margin-right: 2rem;
+        }
+
+    }
+
+    .checkbox-container {
+        display: flex;
+        gap: 2rem;
+
+        h5 {
+            width: 10rem;
+        }
+
+        label {
+            margin-left: 1rem;
+        } 
+    }
+
+    .checkbox-holder {
+        display: flex;
+        flex-direction: column;
+        width: 12rem;
+    }
+
+    .form-holder {
+        
+        .text-s {
+            padding-top: 0.5rem;
+            color: $gray-600;
+        }
+    }
+
+    form {
+        display: flex;
+        gap: 1rem;
+
+        input {
+            width: 41.5rem;
+            border-radius: 5px;
+            border: 1px $gray-400 solid;
+            padding-top: 0.7rem;
+            padding-bottom: 0.7rem;
+        }
+    }
+}

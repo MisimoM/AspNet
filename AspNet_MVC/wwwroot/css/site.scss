@@ -1,0 +1,17 @@
+﻿@import
+"scss/utilities/breakpoints",
+"scss/utilities/colors";
+
+@import
+"scss/base/reset",
+"scss/base/typography";
+
+@import
+"scss/components/button",
+"scss/components/links";
+
+@import
+"scss/layout/header",
+"scss/layout/footer";
+
+@import "scss/pages/home/showcase", "scss/pages/home/features", "scss/pages/home/themes", "scss/pages/home/manager", "scss/pages/home/app", "scss/pages/home/integrate", "scss/pages/home/subscribe", "scss/pages/account/sign-in", "scss/pages/account/sign-up", "scss/pages/account/account-details", "scss/pages/courses/all-courses.scss";

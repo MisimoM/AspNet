@@ -1,0 +1,40 @@
+.themes {
+    display: flex;
+    position: relative;
+    height: 100vh;
+
+    span {
+        color: $white;
+    }
+
+    img {
+        width: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+    }
+
+    .dark {
+        background-color: $gray-900;
+        width: 50%;
+
+        h1 {
+            color: $white;
+            text-align: right;
+            padding-top: 3rem;
+            padding-right: 0.5rem;
+        }
+    }
+
+    .light {
+        background-color: $white;
+        width: 50%;
+
+        h1 {
+            padding-top: 3rem;
+            padding-left: 0.5rem;
+        }
+    }
+}
