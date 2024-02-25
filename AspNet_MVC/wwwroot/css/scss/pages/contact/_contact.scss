@@ -1,0 +1,80 @@
+.contact {
+    background-color: $gray-100;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    .text-s {
+        color: $gray-600;
+    }
+
+    .contact-container {
+        position: relative;
+
+        h1 {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+    }
+
+    .content-holder {
+        display: flex;
+        gap: 1.5rem;
+        width: 33%;
+        padding-bottom: 3rem;
+    }
+
+    .icon-holder {
+        
+        i {
+            font-size: 120%;
+            padding: 1rem;
+            background-color: $white;
+            border-radius: 25px;
+            color: $theme;
+        }
+    }
+
+    .text-holder {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        span {
+            color: $theme;
+        }
+    }
+
+    .form-holder {
+        padding: 4rem;
+        width: 32%;
+        background-color: $white;
+        position: absolute;
+        top: 20%;
+        right: 15%;
+        border-radius: 1%;
+        @include shadow-m;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        button {
+            width: 50%;
+        }
+
+        textarea {
+            height: 200px;
+        }
+    }
+
+    input, textarea {
+        width: 100%;
+        border-radius: 5px;
+        border: 1px $gray-400 solid;
+        padding-top: 0.7rem;
+        padding-bottom: 0.7rem;
+        resize: none;
+    }
+}

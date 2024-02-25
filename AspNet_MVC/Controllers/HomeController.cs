@@ -9,5 +9,10 @@ namespace AspNet_MVC.Controllers
 			ViewData["Title"] = "Home";
 			return View();
 		}
+
+		public IActionResult Contact()
+		{
+			return View();
+		}
 	}
 }

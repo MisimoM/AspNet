@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="compilerconfig.json" />
     <None Include="wwwroot\css\scss\base\_reset.scss" />
     <None Include="wwwroot\css\scss\base\_typography.scss" />

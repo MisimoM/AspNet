@@ -1,43 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 $font-manrope: 'Manrope', sans-serif;
 
-%standard-text {
+@mixin standard-text {
+    line-height: 160%;
     font-weight: 400;
     color: $gray-700;
     font-family: $font-manrope;
 }
 
-%standard-heading {
-    @extend %standard-text;
+@mixin standard-heading {
+    @include standard-text();
     font-weight: 800;
     color: $gray-900;
 }
 
-html, body {
-    @extend %standard-text;
-    font-size: 16px; 
-}
+@mixin text-nav { @include standard-text; font-size: 16px; color: $gray-800; font-weight: 600 !important; }
 
-@mixin standard-text {font-weight: 400;color: $gray-700; font-family: $font-manrope;}
-@mixin text-nav { @extend %standard-text; font-size: 16px; color: $gray-800; font-weight: 600 !important; }
+@mixin text-xs { @include standard-text; font-size: 12px !important;}
+@mixin text-s { @include standard-text; font-size: 14px !important; }
+@mixin text-m { @include standard-text; font-size: 16px !important; }
+@mixin text-lg { @include standard-text; font-size: 18px !important; }
+@mixin text-xl { @include standard-text; font-size: 20px !important; }
+@mixin text-lead { @include standard-text; font-size: 24px !important; }
 
-.text-xs { @extend %standard-text; font-size: 12px !important;}
-.text-s { @extend %standard-text; font-size: 14px !important; }
-.text-m { @extend %standard-text; font-size: 16px !important; }
-.text-lg { @extend %standard-text; font-size: 18px !important; }
-.text-xl { @extend %standard-text; font-size: 20px !important; }
-.text-lead { @extend %standard-text; font-size: 24px !important; }
+@mixin d1 { @include standard-heading; font-size: 80px !important; }
+@mixin d2 { @include standard-heading; font-size: 72px !important; }
+@mixin d3 { @include standard-heading; font-size: 64px !important; }
+@mixin d4 { @include standard-heading; font-size: 56px !important; }
+@mixin d5 { @include standard-heading; font-size: 48px !important; }
+@mixin d6 { @include standard-heading; font-size: 42px !important; }
 
-.d1 { @extend %standard-heading; font-size: 80px !important; }
-.d2 { @extend %standard-heading; font-size: 72px !important; }
-.d3 { @extend %standard-heading; font-size: 64px !important; }
-.d4 { @extend %standard-heading; font-size: 56px !important; }
-.d5 { @extend %standard-heading; font-size: 48px !important; }
-.d6 { @extend %standard-heading; font-size: 42px !important; }
-
-h1, .h1 { @extend %standard-heading; font-size: 40px !important; }
-h2, .h2 { @extend %standard-heading; font-size: 32px !important; }
-h3, .h3 { @extend %standard-heading; font-size: 28px !important; }
-h4, .h4 { @extend %standard-heading; font-size: 24px !important; }
-h5, .h5 { @extend %standard-heading; font-size: 20px !important; }
-h6, .h6 { @extend %standard-heading; font-size: 16px !important; }
+@mixin h1 { @include standard-heading; font-size: 40px !important; }
+@mixin h2 { @include standard-heading; font-size: 32px !important; }
+@mixin h3 { @include standard-heading; font-size: 28px !important; }
+@mixin h4 { @include standard-heading; font-size: 24px !important; }
+@mixin h5 { @include standard-heading; font-size: 20px !important; }
+@mixin h6 { @include standard-heading; font-size: 16px !important; }

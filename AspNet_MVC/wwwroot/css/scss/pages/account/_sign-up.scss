@@ -1,42 +1,39 @@
 .sign-up {
 
     .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        display: grid;
     }
 
-    h1 {
+    .grid-container {
+        width: 40%;
+        justify-self: center;
+    }
+
+    h1, p {
         margin-bottom: 1rem;
     }
 
-    form {
-        width: 36rem;
-        margin-top: 2rem;
-        display: flex;
-        flex-direction: column;
+    .sign-up-form {
+        display: grid;
         gap: 1rem;
-    }
 
-    .name-holder {
-        display: flex;
-        gap: 2rem;
-    }
+        @include lg {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+            "firstName lastName"
+            "email email"
+            "password password"
+            "confirmPassword confirmPassword"
+            "checkbox checkbox"
+            "button button";
 
-    input {
-        width: 100%;
-        border-radius: 5px;
-        border: 1px $gray-400 solid;
-        padding-top: 0.7rem;
-        padding-bottom: 0.7rem;
-    }
-
-    .checkbox-holder {
-        display: flex;
-
-        input {
-            width: auto;
-            margin-right: 0.5rem;
+            .form-group:nth-child(1) { grid-area: firstName; }
+            .form-group:nth-child(2) { grid-area: lastName; }
+            .form-group:nth-child(3) { grid-area: email; }
+            .form-group:nth-child(4) { grid-area: password; }
+            .form-group:nth-child(5) { grid-area: confirmPassword; }
+            .form-group-checkbox { grid-area: checkbox; }
+            button { grid-area: button; }
         }
     }
 }

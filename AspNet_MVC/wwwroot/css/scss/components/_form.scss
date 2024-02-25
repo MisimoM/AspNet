@@ -1,0 +1,34 @@
+form {
+
+    input, textarea {
+        border-radius: 5px;
+        border: 1px $gray-400 solid;
+        padding: 0.7rem 0 0.7rem 1rem;
+
+        &.input-validation-error {
+            border: 1px $danger solid;
+        }
+
+        &.input-validation-valid {
+            border: 1px $success solid;
+        }
+    }
+
+    span {
+        height: 1.25rem;
+    }
+
+    .field-validation-error {
+        @include text-xs;
+        color: $danger;
+    }
+}
+
+.form-group {
+    display: grid;
+}
+
+.form-group-checkbox {
+    display: flex;
+    gap: 0.5rem;
+}
