@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNet_MVC", "AspNet_MVC\AspNet_MVC.csproj", "{A7C55C71-C34F-4946-925A-FCE3EBA381B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNet_MVC", "AspNet_MVC\AspNet_MVC.csproj", "{A7C55C71-C34F-4946-925A-FCE3EBA381B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{C1FEA2E3-070C-431A-8644-5281911FDD41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{A7C55C71-C34F-4946-925A-FCE3EBA381B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7C55C71-C34F-4946-925A-FCE3EBA381B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7C55C71-C34F-4946-925A-FCE3EBA381B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1FEA2E3-070C-431A-8644-5281911FDD41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1FEA2E3-070C-431A-8644-5281911FDD41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1FEA2E3-070C-431A-8644-5281911FDD41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1FEA2E3-070C-431A-8644-5281911FDD41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

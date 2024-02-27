@@ -1,0 +1,67 @@
+﻿.details-container {
+
+    h2 {
+        display: none;
+    }
+
+    h5 {
+        padding: 1rem 0;
+    }
+
+    @include lg {
+        width: 75%;
+
+        h2 {
+            display: block;
+        }
+    }
+
+    form {
+        display: grid;
+        gap: 1rem;
+        border-bottom: 1px solid $gray-400;
+        padding-bottom: 2rem;
+    }
+
+    .basic-info {
+
+        @include lg {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "firstName lastName" "email password" "bio bio" "button button";
+
+            .form-group:nth-child(1) {
+                grid-area: firstName;
+            }
+
+            .form-group:nth-child(2) {
+                grid-area: lastName;
+            }
+
+            .form-group:nth-child(3) {
+                grid-area: email;
+            }
+
+            .form-group:nth-child(4) {
+                grid-area: password;
+            }
+
+            .form-group:nth-child(5) {
+                grid-area: bio;
+            }
+
+            .button-holder {
+                grid-area: button;
+            }
+        }
+    }
+
+    .btn-holder {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    #address {
+        border: none;
+    }
+}

@@ -1,0 +1,45 @@
+﻿.account-details {
+
+    .container {
+        gap: 5rem;
+
+        @include lg {
+            display: flex;
+        }
+    }
+
+    .profile {
+        display: none;
+
+        @include lg {
+            display: block;
+            margin-bottom: 2rem;
+            text-align: center;
+
+            img {
+                width: 40%;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .profile-container {
+        display: flex;
+        justify-content: center;
+
+        @include lg {
+            width: 25%;
+            border-right: 1px solid $gray-400;
+            display: block;
+        }
+    }
+
+    .nav-holder {
+        display: flex;
+        gap: 2rem;
+
+        @include lg {
+            display: block;
+        }
+    }
+}

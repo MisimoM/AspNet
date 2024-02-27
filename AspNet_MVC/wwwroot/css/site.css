@@ -785,125 +785,96 @@ footer .container .social-media {
 }
 
 .account-details .container {
-  display: flex;
   gap: 5rem;
 }
+@media (min-width: 992px) {
+  .account-details .container {
+    display: flex;
+  }
+}
 .account-details .profile {
-  text-align: center;
-  margin-bottom: 1rem;
+  display: none;
 }
-.account-details .details-left {
-  width: 30%;
-  border-right: 1px solid #D4D7E5;
+@media (min-width: 992px) {
+  .account-details .profile {
+    display: block;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .account-details .profile img {
+    width: 40%;
+    border-radius: 50%;
+  }
 }
-.account-details .details-right {
-  width: 70%;
-}
-.account-details form {
-  width: 100%;
-  margin-top: 2rem;
+.account-details .profile-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+}
+@media (min-width: 992px) {
+  .account-details .profile-container {
+    width: 25%;
+    border-right: 1px solid #D4D7E5;
+    display: block;
+  }
+}
+.account-details .nav-holder {
+  display: flex;
+  gap: 2rem;
+}
+@media (min-width: 992px) {
+  .account-details .nav-holder {
+    display: block;
+  }
+}
+
+.details-container h2 {
+  display: none;
+}
+.details-container h5 {
+  padding: 1rem 0;
+}
+@media (min-width: 992px) {
+  .details-container {
+    width: 75%;
+  }
+  .details-container h2 {
+    display: block;
+  }
+}
+.details-container form {
+  display: grid;
   gap: 1rem;
   border-bottom: 1px solid #D4D7E5;
   padding-bottom: 2rem;
 }
-.account-details #address {
+@media (min-width: 992px) {
+  .details-container .basic-info {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "firstName lastName" "email password" "bio bio" "button button";
+  }
+  .details-container .basic-info .form-group:nth-child(1) {
+    grid-area: firstName;
+  }
+  .details-container .basic-info .form-group:nth-child(2) {
+    grid-area: lastName;
+  }
+  .details-container .basic-info .form-group:nth-child(3) {
+    grid-area: email;
+  }
+  .details-container .basic-info .form-group:nth-child(4) {
+    grid-area: password;
+  }
+  .details-container .basic-info .form-group:nth-child(5) {
+    grid-area: bio;
+  }
+  .details-container .basic-info .button-holder {
+    grid-area: button;
+  }
+}
+.details-container .btn-holder {
+  display: flex;
+  gap: 1.5rem;
+}
+.details-container #address {
   border: none;
-}
-.account-details .input-container {
-  display: flex;
-  gap: 2rem;
-}
-.account-details .input-holder {
-  width: 50%;
-}
-.account-details input, .account-details textarea {
-  width: 100%;
-  border-radius: 5px;
-  border: 1px #D4D7E5 solid;
-  padding-top: 0.7rem;
-  padding-bottom: 0.7rem;
-  resize: none;
-}
-
-.all-courses .text-holder {
-  display: flex;
-  justify-content: space-between;
-}
-.all-courses .input-holder {
-  display: flex;
-}
-.all-courses input {
-  width: 100%;
-  border-radius: 5px;
-  border: 1px #D4D7E5 solid;
-  padding-top: 0.7rem;
-  padding-bottom: 0.7rem;
-}
-
-.contact {
-  background-color: #F3F6FF;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-.contact .text-s {
-  color: #9397AD;
-}
-.contact .contact-container {
-  position: relative;
-}
-.contact .contact-container h1 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-.contact .content-holder {
-  display: flex;
-  gap: 1.5rem;
-  width: 33%;
-  padding-bottom: 3rem;
-}
-.contact .icon-holder i {
-  font-size: 120%;
-  padding: 1rem;
-  background-color: #FFFFFF;
-  border-radius: 25px;
-  color: #6366F1;
-}
-.contact .text-holder {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.contact .text-holder span {
-  color: #6366F1;
-}
-.contact .form-holder {
-  padding: 4rem;
-  width: 32%;
-  background-color: #FFFFFF;
-  position: absolute;
-  top: 20%;
-  right: 15%;
-  border-radius: 1%;
-  box-shadow: 0px 4px 9px -1px rgba(19, 16, 34, 0.03), 0px 4.4px 20px -1px rgba(19, 16, 34, 0.05);
-}
-.contact form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-.contact form button {
-  width: 50%;
-}
-.contact form textarea {
-  height: 200px;
-}
-.contact input, .contact textarea {
-  width: 100%;
-  border-radius: 5px;
-  border: 1px #D4D7E5 solid;
-  padding-top: 0.7rem;
-  padding-bottom: 0.7rem;
-  resize: none;
 }

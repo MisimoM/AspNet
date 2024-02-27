@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -18,9 +18,8 @@
     <None Include="wwwroot\css\scss\components\_links.scss" />
     <None Include="wwwroot\css\scss\layout\_footer.scss" />
     <None Include="wwwroot\css\scss\layout\_header.scss" />
-    <None Include="wwwroot\css\scss\pages\account\_account-details.scss" />
-    <None Include="wwwroot\css\scss\pages\account\_sign-in.scss" />
-    <None Include="wwwroot\css\scss\pages\account\_sign-up.scss" />
+    <None Include="wwwroot\css\scss\pages\authentication\_sign-in.scss" />
+    <None Include="wwwroot\css\scss\pages\authentication\_sign-up.scss" />
     <None Include="wwwroot\css\scss\pages\courses\_all-courses.scss" />
     <None Include="wwwroot\css\scss\pages\home\_app.scss" />
     <None Include="wwwroot\css\scss\pages\home\_features.scss" />
@@ -48,6 +47,13 @@
     <None Include="wwwroot\images\home\showcase\logo-light.svg" />
     <None Include="wwwroot\images\home\subscribe\arrows.svg" />
     <None Include="wwwroot\images\home\themes\themes.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>

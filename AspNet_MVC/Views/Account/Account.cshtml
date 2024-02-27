@@ -1,0 +1,18 @@
+﻿<section class="account-details">
+    <div class="container">
+        <div class="profile-container">
+            <div class="profile">
+                <img src="~images/profile-image.png" alt="">
+                <h5>FirstName LastName</h5>
+                <p>firstname.lastname@mail.com</p>
+            </div>
+            <div class="nav-holder">
+                <a asp-controller="Profile" asp-action="AccountDetails">Account details</a>
+                <a asp-controller="Profile" asp-action="Security">Security</a>
+                <a asp-controller="Profile" asp-action="SavedCourses">Saved Courses</a>
+                <a asp-controller="Profile" asp-action="SignOut">Sign out</a>
+            </div>
+        </div>
+        <partial name="~/Views/Shared/Sections/Account/_DetailsPartial.cshtml" />
+    </div>
+</section>

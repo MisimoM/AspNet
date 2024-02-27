@@ -16,4 +16,20 @@
 "scss/layout/header",
 "scss/layout/footer";
 
-@import "scss/pages/home/showcase", "scss/pages/home/features", "scss/pages/home/themes", "scss/pages/home/manager", "scss/pages/home/app", "scss/pages/home/integrate", "scss/pages/home/subscribe", "scss/pages/account/sign-in", "scss/pages/account/sign-up", "scss/pages/account/account-details", "scss/pages/courses/all-courses.scss","scss/pages/contact/contact";
+@import
+"scss/pages/home/showcase",
+"scss/pages/home/features",
+"scss/pages/home/themes",
+"scss/pages/home/manager",
+"scss/pages/home/app",
+"scss/pages/home/integrate",
+"scss/pages/home/subscribe";
+
+@import
+"scss/pages/authentication/sign-in",
+"scss/pages/authentication/sign-up";
+
+
+@import
+"scss/pages/account/account",
+"scss/pages/account/details";
