@@ -1,20 +1,63 @@
 .manager {
 
     .container {
-        padding-top: 8rem;
-        display: flex;
-        gap: 7rem;
+        display: grid;
+        padding-top: 4%;
+        
+        @include lg {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include xl {
+            grid-template-columns: 1.5fr 1fr;
+        }
     }
 
-    h2 {
-        padding-top: 9rem;
+    img {
+        width: 80%;
+
+        @include lg {
+            width: 100%;
+        }
+    }
+
+    .list-holder {
+        justify-self: center;
+        align-self: center;
+
+        h2 {
+            @include h4;
+        }
+
+        li {
+            @include text-s;
+        }
+
+        @include lg {
+            h2 {
+                @include h3;
+            }
+
+            li {
+                @include text-m;
+            }
+        }
+
+        @include xl {
+            h2 {
+                @include h2;
+            }
+
+            li {
+                @include text-lg;
+            }
+        }
     }
 
     ul {
-        padding-top: 2rem;
+        padding-top: 1rem;
         padding-bottom: 2rem;
-        display: flex;
-        flex-direction: column;
+        display: grid;
         gap: 1rem;
     }
 

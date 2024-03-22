@@ -1,38 +1,104 @@
 .showcase {
-    height: 100vh;
-    img {
+    display: grid;
+    
+    .bg-image {
         display: none;
     }
 
+    .container {
+        display: grid;
+        padding: 0 2rem 2rem 2rem;
+    }
+    
+    .text-holder {
+        display: grid;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+        
+        h1 {
+            @include h3;
+        }
+
+        button {
+            width: 60%;
+        }
+    }
+
+    .logo-holder {
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 1rem;
+    }
+
+    @include md {
+        h1 {
+            @include h2
+        }
+
+        .text-holder {
+            
+            button {
+                width: 40%;
+            }
+        }
+
+        .logo-holder {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+
+
     @include lg {
-        img {
+        grid-template-areas: "stack";
+        
+        .bg-image {
             display: block;
-            float: right;
+            grid-area: stack;
+            width: 50%;
+            position: relative;
+            left: 50%;
+        }
+
+        .container {
+            grid-area: stack;
+            padding: 0;
         }
 
         .showcase-text {
             width: 40%;
-            padding-top: 8rem;
+            display: grid;
+        }
+    
+        .text-holder {
+            display: grid;
+            gap: 1.5rem;
+            align-content: center;
+
+            h1 {
+                @include d6;
+            }
+    
+            button {
+                width: 40%;
+            }
+        }
+    
+        .logo-holder {
             display: flex;
-            flex-direction: column;
-            gap: 8rem;
-
-            p {
-                padding-top: 2rem;
-                padding-bottom: 2rem;
-            }
-
-            h6 {
-                padding-bottom: 4rem;
-            }
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
     }
 
-    .container {
+    @include xl {
 
-        .logo-holder {
-            display: flex;
-            gap: 1.4rem;
+        .text-holder {
+
+            h1 {
+                @include d4;
+            }
         }
     }
 }

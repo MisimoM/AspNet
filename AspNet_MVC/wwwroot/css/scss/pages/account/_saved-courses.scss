@@ -1,0 +1,102 @@
+﻿.saved-courses-container {
+
+    .title-holder {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+
+        h2 {
+            @include h4;
+
+            @include md {
+                @include h3;
+            }
+
+            @include lg {
+                @include h2;
+            }
+        }
+
+        @include lg {
+            margin-top: 0;
+        }
+
+        button {
+            @include button;
+            border: 1px solid $danger;
+            color: $danger;
+            font-weight: 600;
+
+            &:hover {
+                color: $white;
+                background-color: $danger;
+                transition: 100ms ease-in-out;
+            }
+        }
+
+        i {
+            font-size: 18px;
+        }
+    }
+
+    .grid-container {
+        display: grid;
+        justify-content: center;
+        margin-top: 3rem;
+        gap: 1rem;
+
+        @include md {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .grid-item {
+        background-color: $white;
+        border-radius: 10px;
+        @include shadow-m;
+
+        img {
+            width: 100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .text-holder {
+            padding: 1rem;
+        }
+
+        .top-holder {
+            border-bottom: 1px solid $gray-300;
+            padding-bottom: 1rem;
+            display: grid;
+            gap: 0.5rem;
+
+            .author {
+                @include text-s;
+            }
+
+            .price {
+                color: $theme;
+                font-size: 18px;
+                font-weight: 800;
+            }
+        }
+
+        .bottom-holder {
+            display: flex;
+            gap: 2rem;
+            padding-top: 1rem;
+        }
+
+        .time, .rating {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+
+            p {
+                @include text-s;
+                color: $gray-600;
+            }
+        }
+    }
+}

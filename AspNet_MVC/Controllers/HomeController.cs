@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace AspNet_MVC.Controllers
+namespace Presentation.Controllers
 {
 	public class HomeController : Controller
 	{
@@ -14,5 +14,10 @@ namespace AspNet_MVC.Controllers
 		{
 			return View();
 		}
-	}
+
+        public IActionResult Courses()
+        {
+            return View();
+        }
+    }
 }

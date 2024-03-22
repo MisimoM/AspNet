@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Text.Json.Serialization;
 
-namespace AspNet_MVC.Models
+namespace Presentation.Models
 {
 	public class SignUpModel
 	{

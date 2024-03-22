@@ -8,6 +8,11 @@
 
   <ItemGroup>
     <Content Remove="compilerconfig.json" />
+    <Content Remove="wwwroot\css\scss\pages\account\_security.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\css\scss\pages\account\_security.scss" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,6 +23,7 @@
     <None Include="wwwroot\css\scss\components\_links.scss" />
     <None Include="wwwroot\css\scss\layout\_footer.scss" />
     <None Include="wwwroot\css\scss\layout\_header.scss" />
+    <None Include="wwwroot\css\scss\pages\account\_security.scss" />
     <None Include="wwwroot\css\scss\pages\authentication\_sign-in.scss" />
     <None Include="wwwroot\css\scss\pages\authentication\_sign-up.scss" />
     <None Include="wwwroot\css\scss\pages\courses\_all-courses.scss" />
@@ -30,6 +36,8 @@
     <None Include="wwwroot\css\scss\pages\home\_themes.scss" />
     <None Include="wwwroot\css\scss\utilities\_breakpoints.scss" />
     <None Include="wwwroot\css\scss\utilities\_colors.scss" />
+    <None Include="wwwroot\images\courses\officeimage.svg" />
+    <None Include="wwwroot\images\courses\webdevcomputer.svg" />
     <None Include="wwwroot\images\home\app\appstore.svg" />
     <None Include="wwwroot\images\home\app\googleplay.svg" />
     <None Include="wwwroot\images\home\app\phone-app.svg" />
@@ -54,6 +62,14 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Shared\Sections\Account\" />
   </ItemGroup>
 
 </Project>

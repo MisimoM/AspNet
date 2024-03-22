@@ -1,23 +1,195 @@
 .all-courses {
 
-    .container {
+    h1 {
+        @include h3;
 
+        @include md {
+            @include h2;
+        }
+
+        @include lg {
+            @include h1;
+        }
     }
 
-    .text-holder {
+    .title-holder {
+
+        @include lg {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .input-wrapper {
         display: flex;
+        gap: 2rem;
+        margin-top: 1rem;
         justify-content: space-between;
     }
 
     .input-holder {
         display: flex;
+        align-items: center;
+
+        input {
+            width: 100%;
+            border-radius: 5px;
+            border: 1px $gray-400 solid;
+            padding: 0.7rem 0 0.7rem 1rem;
+            border-right: none;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        button {
+            border-radius: 5px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border: 1px $gray-400 solid;
+            border-left: none;
+            padding: 0.7rem 0 0.7rem 1rem;
+            width: 3rem;
+
+            i {
+                text-align: center;
+                margin-right: 1rem;
+            }
+        }
     }
 
-    input {
-        width: 100%;
-        border-radius: 5px;
-        border: 1px $gray-400 solid;
-        padding-top: 0.7rem;
-        padding-bottom: 0.7rem;
+    .grid-container {
+        display: grid;
+        justify-content: center;
+        margin-top: 3rem;
+        gap: 1rem;
+
+        @include md {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include lg {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .grid-item {
+        background-color: $white;
+        border-radius: 10px;
+        @include shadow-m;
+
+        img {
+            width: 100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .text-holder {
+            padding: 1rem;
+        }
+
+        .top-holder {
+            border-bottom: 1px solid $gray-300;
+            padding-bottom: 1rem;
+            display: grid;
+            gap: 0.5rem;
+
+            .author {
+                @include text-s;
+            }
+
+            .price {
+                color: $theme;
+                font-size: 18px;
+                font-weight: 800;
+            }
+        }
+
+        .bottom-holder {
+            display: flex;
+            gap: 2rem;
+            padding-top: 1rem;
+        }
+
+        .time, .rating {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+
+            p {
+                @include text-s;
+                color: $gray-600;
+            }
+        }
+    }
+
+    .bottom-content {
+        border-radius: 10px;
+        margin-top: 5rem;
+        background-color: $gray-200;
+        padding: 2rem;
+        display: grid;
+        gap: 0.5rem;
+        grid-template-areas:
+            "paragraph " "title" "desk-img" "button";
+
+        @include md {
+            grid-template-areas:
+                "paragraph desk-img" "title desk-img" "button desk-img";
+            gap: 0;
+        }
+
+        @include lg {
+            padding: 4rem;
+        }
+
+        p {
+            grid-area: paragraph;
+
+            @include md {
+                align-self: end;
+            }
+
+            @include lg {
+                @include text-lead;
+            }
+        }
+
+        h1 {
+            grid-area: title;
+
+            @include md {
+                width: 80%;
+            }
+
+            @include xl {
+                width: 70%;
+            }
+        }
+
+        span {
+            color: $theme;
+        }
+
+        button {
+            grid-area: button;
+            width: 50%;
+            place-self: center;
+
+            @include md {
+                place-self: start;
+            }
+        }
+
+        img {
+            grid-area: desk-img;
+            width: 50%;
+            place-self: center;
+            margin-bottom: 1rem;
+
+            @include md {
+                width: 100%;
+                margin-bottom: 0;
+            }
+        }
     }
 }

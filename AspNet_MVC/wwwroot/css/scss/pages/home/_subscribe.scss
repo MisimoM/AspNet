@@ -4,63 +4,130 @@
     padding-bottom: 5%;
 
     .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .content-holder {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
+        display: grid;
+        place-items: center;
     }
 
     .title-holder {
         display: flex;
 
         h1 {
-            margin-right: 2rem;
+            @include h4;
         }
 
-    }
-
-    .checkbox-container {
-        display: flex;
-        gap: 2rem;
-
-        h5 {
-            width: 10rem;
-        }
-
-        label {
-            margin-left: 1rem;
-        } 
-    }
-
-    .checkbox-holder {
-        display: flex;
-        flex-direction: column;
-        width: 12rem;
-    }
-
-    .form-holder {
-        
-        .text-s {
-            padding-top: 0.5rem;
-            color: $gray-600;
+        img {
+            width: 10%;
         }
     }
 
     form {
-        display: flex;
+        display: grid;
+        width: 90%;
         gap: 1rem;
+        grid-template-areas:
+        "title title"
+        "signup image-arrow"
+        "checkboxes checkboxes"
+        "email email"
+        "button button"
+        "terms terms";
 
-        input {
-            width: 41.5rem;
-            border-radius: 5px;
-            border: 1px $gray-400 solid;
-            padding-top: 0.7rem;
-            padding-bottom: 0.7rem;
+        @include sm {
+            grid-template-areas:
+            "title image-arrow"
+            "signup signup"
+            "checkboxes checkboxes"
+            "email email"
+            "button button"
+            "terms terms";
         }
+
+        @include lg {
+            width: 80%;
+            grid-template-columns: 0.8fr 1fr 1fr 1fr;
+            grid-template-areas:
+            "title title title image-arrow"
+            "signup checkboxes checkboxes checkboxes"
+            "signup checkboxes checkboxes checkboxes"
+            "email email email button"
+            "terms terms terms terms";
+        }
+
+        @include xl {
+            width: 70%;
+        }
+
+        h1 {
+            grid-area: title;
+            @include h4;
+
+            @include sm {
+                @include h3;
+            }
+
+            @include md {
+                @include h2;
+            }
+
+            @include xxl {
+                @include h1;
+            }
+        }
+
+        h5 {
+            grid-area: signup;
+        }
+        
+        img { grid-area: image-arrow}
+        
+        .checkbox-container {
+            grid-area: checkboxes;
+            display: grid;
+            gap: 0.5rem;
+            grid-template-areas:
+            "daily event"
+            "advertising startups"
+            "week podcasts";
+
+            @include lg {
+                grid-template-areas:
+                "daily advertising week"
+                "event startups podcasts";
+            }
+
+            .box:nth-child(1) {grid-area: daily;}
+            .box:nth-child(2) {grid-area: event;}
+            .box:nth-child(3) {grid-area: advertising;}
+            .box:nth-child(4) {grid-area: startups;}
+            .box:nth-child(5) {grid-area: week;}
+            .box:nth-child(6) {grid-area: podcasts;}
+        }
+        .email-input {grid-area: email;}
+        .btn-theme {
+            grid-area: button;
+            place-self: center;
+            width: 60%;
+
+            @include lg {
+                height: 100%;
+                width: 80%;
+            }
+        }
+
+        .terms-text {
+            grid-area: terms;
+            place-self: center;
+
+            @include lg {
+                place-self: start;
+            }
+        }
+
+        .box {
+            color: $gray-600;
+            display: flex;
+            gap: 0.5rem;
+        }
+        
     }
 }

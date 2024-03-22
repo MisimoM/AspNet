@@ -1,40 +1,80 @@
 .themes {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     position: relative;
-    height: 100vh;
+    height: 20rem;
+
+    @include md {
+        height: 35rem;
+    }
+
+    @include lg {
+        height: 100vh;
+    }
 
     span {
         color: $white;
     }
 
-    img {
-        width: 50%;
+    .content-holder {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "white-text black-text"
+        "img-space img-space";
+
+        #white {
+            margin-top: 10%;
+            grid-area: white-text;
+            color: $white;
+            place-self: end;
+            padding-right: 0.5rem;
+        }
+
+        #black {
+            margin-top: 10%;
+            grid-area: black-text;
+            padding-left: 0.5rem;
+        }
+
+        img {
+            margin-top: 4%;
+            grid-area: img-space;
+            place-self: center;
+            width: 20rem;
+            height: auto;
+
+            @include md {
+                width: 60%;
+            }
+
+            @include lg {
+               width: 50%;
+            }
+    
+            
+        }
+
+        h1 {
+            @include h5;
+    
+            @include md {
+                @include h2
+            }
+    
+            @include lg {
+                @include h1
+            }
+        }
     }
 
     .dark {
         background-color: $gray-900;
-        width: 50%;
-
-        h1 {
-            color: $white;
-            text-align: right;
-            padding-top: 3rem;
-            padding-right: 0.5rem;
-        }
     }
 
     .light {
         background-color: $white;
-        width: 50%;
-
-        h1 {
-            padding-top: 3rem;
-            padding-left: 0.5rem;
-        }
     }
 }

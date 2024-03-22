@@ -4,37 +4,76 @@
     padding-bottom: 5%;
 
     .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         text-align: center;
-        gap: 2rem;
+        display: grid;
+    }
 
-        .text-holder {
-            width: 50%;
+    .text-holder {
+        display: grid;
+        place-self: center;
 
-           .text-lg {
+        p {
+            @include text-lg;
             color: $gray-600;
-            margin-top: 2rem;
-           }
+            margin-top: 1rem;
+            width: 90%;
+            place-self: center;
         }
 
-        .grid {
-            background-color: $gray-300;
-            display: grid;
-            grid-template-rows: repeat(auto-fit, minmax(10rem, 1fr));
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.1rem;
+        h1 {
+            @include h3;
         }
 
-        .grid-item {
-            background-color: $gray-100;
-            padding: 2rem;
+        @include md {
+            margin-bottom: 2rem;
 
-            img {
-                padding-bottom: 1rem;
+            h1 {
+                @include h2;
             }
+        }
+
+        @include lg {
+
+            p {
+                
+            }
+            
+            h1 {
+                @include h1;
+            }
+        }
+
+
+    }
+
+    .grid {
+        background-color: $gray-300;
+        display: grid;
+        justify-content: center;
+        gap: 0.1rem;
+
+        @include md{
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include lg{
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+
+    .grid-item {
+        background-color: $gray-100;
+        padding: 2rem;
+
+        img {
+            padding-bottom: 1rem;
+        }
+
+        &:hover {
+            background-color: $white;
+            border-radius: 5px;
+            @include theme-secondary-shadow;
         }
     }
 }

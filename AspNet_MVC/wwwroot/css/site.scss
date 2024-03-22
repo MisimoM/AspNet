@@ -26,10 +26,15 @@
 "scss/pages/home/subscribe";
 
 @import
+"scss/pages/courses/all-courses";
+
+@import
 "scss/pages/authentication/sign-in",
 "scss/pages/authentication/sign-up";
 
 
 @import
 "scss/pages/account/account",
-"scss/pages/account/details";
+"scss/pages/account/details",
+"scss/pages/account/security",
+"scss/pages/account/saved-courses";

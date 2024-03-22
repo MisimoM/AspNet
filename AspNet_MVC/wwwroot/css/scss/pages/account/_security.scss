@@ -1,0 +1,71 @@
+﻿.security-container {
+
+    h2 {
+        margin-bottom: 2rem;
+    }
+
+    h5 {
+        color: $theme;
+    }
+
+    @include lg {
+        width: 75%;
+
+        h2 {
+            display: block;
+        }
+    }
+
+    form {
+        display: grid;
+        gap: 2rem;
+        border-bottom: 1px solid $gray-400;
+        padding-bottom: 2rem;
+    }
+
+    .password {
+
+        @include lg {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "password placeholder" "new-password confirm-password" "button button";
+
+            .form-group:nth-child(1) {
+                grid-area: password;
+            }
+
+            .form-group:nth-child(2) {
+                grid-area: new-password;
+            }
+
+            .form-group:nth-child(3) {
+                grid-area: confirm-password;
+            }
+
+            .btn-holder {
+                grid-area: button;
+            }
+        }
+    }
+
+    .btn-holder {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .delete {
+        margin-top: 2rem;
+        display: grid;
+        gap: 1rem;
+
+        .input-holder {
+            display: flex;
+            gap: 1rem;
+        }
+
+        button {
+            background-color: $danger;
+            color: $white;
+        }
+    }
+}

@@ -37,9 +37,36 @@
     .nav-holder {
         display: flex;
         gap: 2rem;
+        width: 100%;
+        justify-content: space-evenly;
+
+        span {
+            display: none;
+        }
+
+        i {
+            font-size: 22px;
+        }
+
+        @include md {
+
+            span {
+                display: block;
+            }
+
+            i {
+                font-size: 16px;
+            }
+
+            a {
+                display: flex;
+                gap: 0.5rem;
+                align-items: center;
+            }
+        }
 
         @include lg {
-            display: block;
+            flex-direction: column;
         }
     }
 }

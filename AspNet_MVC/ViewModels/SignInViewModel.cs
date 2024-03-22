@@ -1,6 +1,6 @@
-﻿using AspNet_MVC.Models;
+﻿using Presentation.Models;
 
-namespace AspNet_MVC.ViewModels
+namespace Presentation.ViewModels
 {
     public class SignInViewModel
     {

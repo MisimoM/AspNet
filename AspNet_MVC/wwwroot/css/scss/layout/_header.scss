@@ -1,59 +1,141 @@
 header {
-    padding: 15px 0;
-
     .container {
         display: grid;
         align-items: center;
-        grid-template-columns: 1fr auto;
-        grid-template-areas:  "logo mobile";
-        gap: 40px;
-        
+        grid-template-columns: auto auto auto;
+        grid-template-areas: "logo navmenu mobile";
+        padding: 2rem 0;
+
         @include lg {
-            grid-template-columns: auto 1fr auto auto;
-            grid-template-areas:  "logo menu switch buttons";
+            grid-template-columns: 0.2fr 1fr;
+            grid-template-areas: "logo navmenu";
         }
 
-        #logo { grid-area: logo; }
-
-        #menu { 
-            grid-area: menu; 
-            display: none;
+        #logo {
+            grid-area: logo;
+            padding-left: 2rem;
 
             @include lg {
-                display: block;
+                padding-left: 0;
+            }
+        }
+
+        .mobile-menu-closed {
+            background-color: rgb(255, 255, 255, 0.9);
+            padding: 2rem;
+            display: grid;
+            position: fixed;
+            inset: 0;
+            grid-area: navmenu;
+            grid-template-rows: 0.1fr 0.1fr 0.1fr auto;
+            place-items: start center;
+            translate: 100vw;
+            transition: translate 0.5s ease-in-out;
+
+            @include lg {
+                background-color: $white;
+                padding: 0;
+                grid-template-columns: 1fr 1.5fr auto;
+                grid-template-rows: none;
+                position: relative;
+                place-items: start;
+                align-items: center;
+                translate: none;
+                transition: none;
+                height: 100%;
+                gap: 2rem;
+                grid-template-areas: "links switch buttons";
+            }
+        }
+
+        .mobile-menu-open {
+            background-color: rgb(255, 255, 255, 0.9);
+            padding: 2rem;
+            display: grid;
+            position: fixed;
+            inset: 0;
+            grid-area: navmenu;
+            grid-template-rows: 0.1fr 0.1fr 0.1fr auto;
+            place-items: start center;
+            translate: 0vw;
+            transition: translate 0.5s ease-in-out;
+
+            @include lg {
+                background-color: $white;
+                padding: 0;
+                grid-template-columns: 1fr 1.5fr 0.5fr;
+                grid-template-rows: none;
+                position: relative;
+                place-items: start;
+                align-items: center;
+                translate: none;
+                transition: none;
+                height: 100%;
+                gap: 2rem;
+                grid-template-areas: "links switch buttons";
+            }
+        }
+
+        .close-btn {
+            place-self: start end;
+            @include h4;
+
+            i {
+                color: $theme;
             }
 
-            ul {
+            @include lg {
+                display: none;
+            }
+        }
+
+        .menu {
+            display: flex;
+            gap: 2rem;
+
+            @include lg {
                 display: flex;
-                gap: 15px;
-            }
-        }
-        
-        .btn-switch { 
-            grid-area: switch; 
-            display: none;
-
-            @include lg {
-                display: block;
+                gap: 1rem;
+                grid-area: links;
             }
         }
 
-        .account-buttons { 
-            grid-area: buttons; 
-            display: none;
-            gap: 15px;
+        .btn-switch {
 
             @include lg {
-                display: flex;
+                grid-area: switch;
+                place-self: center end;
+            }
+        }
+
+        .account-buttons {
+            display: flex;
+            gap: 1rem;
+
+            @include lg {
+                grid-area: buttons;
             }
         }
 
         .btn-mobile {
-            grid-area: mobile; 
-            display: block;
+            grid-area: mobile;
 
             @include lg {
                 display: none;
+            }
+        }
+
+        .profile-image {
+            text-align: center;
+
+            img {
+                width: 6rem;
+                border-radius: 50%;
+
+                @include lg {
+                    width: 3rem;
+                    grid-area: buttons;
+                }
             }
         }
     }

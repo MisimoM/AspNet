@@ -1,15 +1,31 @@
 .sign-up {
 
+    h1 {
+        @include h3;
+
+        @include md {
+            @include h2;
+        }
+
+        @include lg {
+            @include h1;
+        }
+    }
+    
     .container {
         display: grid;
     }
 
     .grid-container {
-        width: 40%;
+        width: 80%;
         justify-self: center;
+
+        @include lg {
+            width: 45%;
+        }
     }
 
-    h1, p {
+    h1 {
         margin-bottom: 1rem;
     }
 

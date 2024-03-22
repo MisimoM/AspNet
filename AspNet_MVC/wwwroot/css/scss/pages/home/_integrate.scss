@@ -3,37 +3,70 @@
     padding-bottom: 5%;
 
     .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
+        display: grid;
+        gap: 3rem;
     }
 
     .heading-holder {
-        text-align: center;
-        width: 65%;
+        place-self: center;
+
+        h1 {
+            @include h3;
+            text-align: center;
+        }
 
         .text-lg {
             color: $gray-600;
             margin-top: 2rem;
         }
+
+        @include md {
+            h1 {
+                @include h1;
+            }
+        }
+
+        @include lg {
+            text-align: center;
+            width: 65%;
+
+            h1 {
+                @include h1;
+            }
+        }
     }
 
     .grid {
         display: grid;
+        gap: 0.1rem;
+        background-color: $gray-200;
         grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
-        grid-template-rows: repeat(auto-fit, minmax(10rem, 1fr));
         overflow: hidden;
         width: 100%;
+
+        @include md {
+            background-color: $white;
+        }
     }
 
     .grid-item {
-        padding: 1rem;
+        padding: 2rem 0;
+        background-color: $white;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        @include md {
+            display: block;
+            padding: 1rem;
+        }
     }
 
     .img-holder {
         height: 4rem;
-        margin-bottom: 1rem;
+
+        @include md {
+            margin-bottom: 1rem;
+        }
     }
 }

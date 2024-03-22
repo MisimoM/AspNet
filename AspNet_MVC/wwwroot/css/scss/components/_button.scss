@@ -1,4 +1,4 @@
-%button {
+@mixin button {
     border-radius: 6px;
     text-align: center;
     font-size: 14px;
@@ -10,7 +10,7 @@
 }
 
 .btn-theme { 
-    @extend %button;
+    @include button;
     background: $theme;
     color: $white;
     border: none;
@@ -23,7 +23,7 @@
 }
 
 .btn-theme-s {
-    @extend %button;
+    @include button;
     @include theme-shadow;
     background: $theme;
     color: $white;
@@ -39,7 +39,7 @@
 }
 
 .btn-gray { 
-    @extend %button;
+    @include button;
     background: $gray-200;
     color: $gray-800;
     border: none;

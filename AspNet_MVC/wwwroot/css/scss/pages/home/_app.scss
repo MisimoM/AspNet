@@ -2,37 +2,102 @@
     background-color: $gray-100;
 
     .container {
-        background-color: $gray-200;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 5rem;
-        padding-top: 4rem;
-        padding-bottom: 4rem;
+        background-color: $gray-200 ;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        grid-template-areas:
+        
+        "app-img heading"
+        "appstore googleplay";
+
+        @include md {
+            grid-template-areas:
+            "app-img heading"
+            "app-img appstore"
+            "app-img googleplay";
+        }
     }
 
-    h2 {
-        width: 70%;
+    .heading-holder {
+        grid-area: heading;
+        place-self: center;
+
+        h1 {
+            @include h3;
+        }
+
+        @include xl {
+            place-self: start;
+            width: 70%;
+            padding-top: 15%;
+            h1 {
+                @include h1;
+            }
+        }
     }
 
-    .text-holder {
-        margin-top: 6%;
-        width: 30%;
-        align-self: flex-start;
+    .img-holder {
+        grid-area: app-img;
+        text-align: center;
+        padding: 1rem;
+
+        @include md {
+            place-self: center;
+        }
+
+        img {
+            width: 100%;
+        }
     }
 
-    .rating {
-        padding-top: 4rem;
-        padding-bottom: 0.5rem;
+    .appstore {
+        grid-area: appstore;
+    }
+    
+    .googleplay {
+        grid-area: googleplay;
     }
 
     .store {
-        display: flex;
-        gap: 3rem;
+        display: grid;
+        gap: 0.5rem;
 
-        img {
-            width: 35%;
-            align-self: flex-end;
+        .store-img {
+            width: 50%;
+
+            @include md {
+                width: 40%;
+            }
+
+            @include lg {
+                width: 40%;
+            }
+            
+            @include xl {
+                width: 30%;
+            }
+        }
+    }
+
+    h4 {
+        @include h6;
+
+        @include md {
+            @include h4;
+        }
+    }
+
+    .flex-container {
+
+        p {
+            padding-top: 0.3rem;
+            padding-bottom: 0.5rem;
+        }
+
+        @include md {
+            display: flex;
+            gap: 10%;
         }
     }
 }
