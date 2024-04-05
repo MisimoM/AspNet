@@ -135,3 +135,20 @@
         color: $white;
     } 
 }
+
+.dark-mode {
+
+    .btn-social {
+        background-color: #151822;
+        color: $white;
+
+        &:hover {
+            color: $theme;
+        }
+    }
+
+    .btn-gray {
+        background-color: #171B24;
+        color: $white;
+    }
+}

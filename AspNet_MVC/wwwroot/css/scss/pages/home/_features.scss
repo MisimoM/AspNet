@@ -35,15 +35,12 @@
         @include lg {
 
             p {
-                
             }
-            
+
             h1 {
                 @include h1;
             }
         }
-
-
     }
 
     .grid {
@@ -52,11 +49,11 @@
         justify-content: center;
         gap: 0.1rem;
 
-        @include md{
+        @include md {
             grid-template-columns: repeat(2, 1fr);
         }
 
-        @include lg{
+        @include lg {
             grid-template-columns: repeat(3, 1fr);
         }
     }
@@ -66,14 +63,52 @@
         background-color: $gray-100;
         padding: 2rem;
 
+        .img-holder {
+            background-color: aqua;
+            width: 40px;
+            height: 40px;
+        }
+
         img {
-            padding-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
         }
 
         &:hover {
             background-color: $white;
             border-radius: 5px;
             @include theme-secondary-shadow;
+
+            img {
+                background-color: $gray-100;
+            }
+        }
+    }
+}
+
+.dark-mode {
+    .features {
+        background-color: #151822;
+
+        .grid {
+            background-color: $gray-800;
+        }
+
+        .grid-item {
+            background-color: #151822;
+
+            img {
+                background-color: #1E222B;
+            }
+
+            &:hover {
+                background-color: #1E222B;
+
+                img {
+                    background-color: #272B33;
+                }
+            }
         }
     }
 }

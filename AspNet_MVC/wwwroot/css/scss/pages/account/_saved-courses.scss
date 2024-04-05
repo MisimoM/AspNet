@@ -100,3 +100,21 @@
         }
     }
 }
+
+.dark-mode {
+    
+    .saved-courses-container {
+
+        .grid-item {
+            background-color: #191D27;
+
+            h5 {
+                color: $white;
+            }
+
+            p {
+                color: $gray-500;
+            }
+        }
+    }
+}

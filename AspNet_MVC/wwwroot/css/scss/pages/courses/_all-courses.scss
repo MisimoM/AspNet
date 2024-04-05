@@ -193,3 +193,35 @@
         }
     }
 }
+
+.dark-mode {
+    .all-courses {
+
+        .input-wrapper {
+            input, button {
+                background-color: #191D27;
+                border-color: #75777D;
+            }
+        }
+
+        i {
+            color: $white;
+        }
+
+        .grid-item {
+            background-color: #191D27;
+
+            h5 {
+                color: $white;
+            }
+
+            p {
+                color: $gray-500;
+            }
+        }
+
+        .bottom-content {
+            background-color: #191D27;
+        }
+    }
+}

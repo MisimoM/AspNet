@@ -1,19 +1,38 @@
-﻿<section class="subscribe">
+﻿@model SubscriberViewModel
+
+<section class="subscribe">
     <div class="container">
-        <form>
+        <form asp-controller="Home" asp-action="Index" novalidate>
             <h1>Don't Want to Miss Anything?</h1>
             <img src="~/images/home/subscribe/arrows.svg" alt="">
             <h5>Sign up for Newsletters</h5>
             <div class="checkbox-container">
-                <div class="text-s box"><input type="checkbox"><label for="">Daily Newsletter</label></div>
-                <div class="text-s box"><input type="checkbox"><label for="">Event Updates</label></div>
-                <div class="text-s box"><input type="checkbox"><label for="">Advertising Updates</label></div>
-                <div class="text-s box"><input type="checkbox"><label for="">Startups Weekly</label></div>
-                <div class="text-s box"><input type="checkbox"><label for="">Week in Review</label></div>
-                <div class="text-s box"><input type="checkbox"><label for="">Podcasts</label></div>
+                <div class="text-s box">
+                    <input type="checkbox" asp-for="DailyNewsletter">
+                    <label asp-for="DailyNewsletter">Daily Newsletter</label>
+                </div>
+                <div class="text-s box">
+                    <input type="checkbox" asp-for="EventUpdates">
+                    <label asp-for="EventUpdates">Event Updates</label></div>
+                <div class="text-s box">
+                    <input type="checkbox" asp-for="AdvertisingUpdates">
+                    <label asp-for="AdvertisingUpdates">Advertising Updates</label>
+                </div>
+                <div class="text-s box">
+                    <input type="checkbox" asp-for="StartupsWeekly">
+                    <label asp-for="StartupsWeekly">Startups Weekly</label>
+                </div>
+                <div class="text-s box">
+                    <input type="checkbox" asp-for="WeekInReview">
+                    <label asp-for="WeekInReview">Week in Review</label>
+                </div>
+                <div class="text-s box">
+                    <input type="checkbox" asp-for="Podcasts">
+                    <label asp-for="Podcasts">Podcasts</label>
+                </div>
             </div>
-            <input class="email-input" type="text" placeholder="Your Email">
-            <button class="btn-theme">Subscribe*</button>
+            <input class="email-input" asp-for="Email">
+            <button class="btn-theme" type="submit">Subscribe*</button>
             <p class="text-s terms-text">*Yes, I agree to the <a href="#">terms</a> and <a href="#">privacy policy</a></p>
         </form>
     </div>

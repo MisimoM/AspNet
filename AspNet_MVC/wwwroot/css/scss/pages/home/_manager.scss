@@ -66,3 +66,14 @@
         color: $theme;
     }
 }
+
+.dark-mode {
+    
+    .manager {
+        background-color: $gray-900;
+
+        .container {
+            background-color: $gray-900;
+        }
+    }
+}

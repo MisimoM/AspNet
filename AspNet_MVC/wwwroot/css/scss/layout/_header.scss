@@ -140,3 +140,29 @@ header {
         }
     }
 }
+
+.dark-mode {
+
+    header {
+        background-color: $gray-900;
+
+        #mobile-menu {
+            background-color: $gray-900;
+        }
+
+        .btn-mobile, .close-btn {
+            
+            i {
+                color: $white;
+            }
+        }
+
+        a {
+            color: $white;
+        }
+
+        label {
+            color: $white;
+        }
+    }
+}

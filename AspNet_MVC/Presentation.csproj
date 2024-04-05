@@ -38,8 +38,6 @@
     <None Include="wwwroot\css\scss\utilities\_colors.scss" />
     <None Include="wwwroot\images\courses\officeimage.svg" />
     <None Include="wwwroot\images\courses\webdevcomputer.svg" />
-    <None Include="wwwroot\images\home\app\appstore.svg" />
-    <None Include="wwwroot\images\home\app\googleplay.svg" />
     <None Include="wwwroot\images\home\app\phone-app.svg" />
     <None Include="wwwroot\images\home\app\rating.svg" />
     <None Include="wwwroot\images\home\integrate\dropbox.svg" />
@@ -52,7 +50,6 @@
     <None Include="wwwroot\images\home\integrate\zoom.svg" />
     <None Include="wwwroot\images\home\manager\manager-image.svg" />
     <None Include="wwwroot\images\home\showcase\showcase.svg" />
-    <None Include="wwwroot\images\home\showcase\logo-light.svg" />
     <None Include="wwwroot\images\home\subscribe\arrows.svg" />
     <None Include="wwwroot\images\home\themes\themes.svg" />
   </ItemGroup>
@@ -62,6 +59,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>

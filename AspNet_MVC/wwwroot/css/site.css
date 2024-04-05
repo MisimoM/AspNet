@@ -216,6 +216,16 @@ h6, .h6 {
   grid-template-rows: auto 1fr auto;
 }
 
+.dark-mode section .container h1, .dark-mode section .container h2, .dark-mode section .container h3, .dark-mode section .container h4, .dark-mode section .container h5, .dark-mode section .container h6 {
+  color: #FFFFFF;
+}
+.dark-mode section .container p, .dark-mode section .container li {
+  color: #B4B7C9;
+}
+.dark-mode .sign-up, .dark-mode .sign-in, .dark-mode .account-details, .dark-mode .account-security, .dark-mode .account-courses, .dark-mode .missing-page, .dark-mode .all-courses, .dark-mode .contact {
+  background-color: #0B0F19;
+}
+
 .btn-theme {
   border-radius: 6px;
   text-align: center;
@@ -354,6 +364,18 @@ h6, .h6 {
   color: #FFFFFF;
 }
 
+.dark-mode .btn-social {
+  background-color: #151822;
+  color: #FFFFFF;
+}
+.dark-mode .btn-social:hover {
+  color: #6366F1;
+}
+.dark-mode .btn-gray {
+  background-color: #171B24;
+  color: #FFFFFF;
+}
+
 a {
   line-height: 160%;
   font-weight: 400;
@@ -362,9 +384,6 @@ a {
   color: #6366F1;
   text-decoration: none;
   transition: all 0.25s ease-in-out;
-}
-a:hover {
-  text-decoration: underline;
 }
 
 .menu-link {
@@ -389,16 +408,13 @@ form input, form textarea {
   border: 1px #D4D7E5 solid;
   padding: 0.7rem 0 0.7rem 1rem;
 }
-form input.input-validation-error, form textarea.input-validation-error {
+form input.field-validation-error, form textarea.field-validation-error {
   border: 1px #EF4444 solid;
 }
-form input.input-validation-valid, form textarea.input-validation-valid {
+form input.field-validation-valid, form textarea.field-validation-valid {
   border: 1px #22C55E solid;
 }
-form span {
-  height: 1.25rem;
-}
-form .field-validation-error {
+form span.field-validation-error {
   line-height: 160%;
   font-weight: 400;
   color: #565973;
@@ -406,14 +422,28 @@ form .field-validation-error {
   font-size: 12px !important;
   color: #EF4444;
 }
-
-.form-group {
+form .form-group {
   display: grid;
+  gap: 0.5rem;
 }
-
-.form-group-checkbox {
+form .form-group label {
+  font-weight: 600;
+}
+form .form-group-checkbox {
   display: flex;
   gap: 0.5rem;
+  width: 100%;
+}
+
+.dark-mode form input, .dark-mode form textarea {
+  background-color: #191D27;
+  border-color: #75777D;
+}
+.dark-mode .form-group label {
+  color: #FFFFFF;
+}
+.dark-mode .form-group-checkbox label {
+  color: #B4B7C9;
 }
 
 header .container {
@@ -560,6 +590,22 @@ header .container .profile-image img {
   }
 }
 
+.dark-mode header {
+  background-color: #0B0F19;
+}
+.dark-mode header #mobile-menu {
+  background-color: #0B0F19;
+}
+.dark-mode header .btn-mobile i, .dark-mode header .close-btn i {
+  color: #FFFFFF;
+}
+.dark-mode header a {
+  color: #FFFFFF;
+}
+.dark-mode header label {
+  color: #FFFFFF;
+}
+
 footer {
   padding: 50px 0 30px 0;
   color: #9397AD;
@@ -573,6 +619,10 @@ footer .container .social-media {
   align-items: center;
   gap: 20px;
   margin-bottom: 30px;
+}
+
+.dark-mode footer {
+  background-color: #0B0F19;
 }
 
 .showcase {
@@ -679,6 +729,10 @@ footer .container .social-media {
   }
 }
 
+.dark-mode .showcase {
+  background-color: #0B0F19;
+}
+
 .features {
   background-color: #F3F6FF;
   padding-top: 5%;
@@ -757,13 +811,42 @@ footer .container .social-media {
   background-color: #F3F6FF;
   padding: 2rem;
 }
+.features .grid-item .img-holder {
+  background-color: aqua;
+  width: 40px;
+  height: 40px;
+}
 .features .grid-item img {
-  padding-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
 }
 .features .grid-item:hover {
   background-color: #FFFFFF;
   border-radius: 5px;
   box-shadow: 0px 8px 18px -8px rgba(19, 16, 34, 0.15);
+}
+.features .grid-item:hover img {
+  background-color: #F3F6FF;
+}
+
+.dark-mode .features {
+  background-color: #151822;
+}
+.dark-mode .features .grid {
+  background-color: #33354D;
+}
+.dark-mode .features .grid-item {
+  background-color: #151822;
+}
+.dark-mode .features .grid-item img {
+  background-color: #1E222B;
+}
+.dark-mode .features .grid-item:hover {
+  background-color: #1E222B;
+}
+.dark-mode .features .grid-item:hover img {
+  background-color: #272B33;
 }
 
 .themes {
@@ -948,6 +1031,13 @@ footer .container .social-media {
   color: #6366F1;
 }
 
+.dark-mode .manager {
+  background-color: #0B0F19;
+}
+.dark-mode .manager .container {
+  background-color: #0B0F19;
+}
+
 .app {
   background-color: #F3F6FF;
 }
@@ -1064,6 +1154,13 @@ footer .container .social-media {
   }
 }
 
+.dark-mode .app {
+  background-color: #151822;
+}
+.dark-mode .app .container {
+  background-color: #1E222B;
+}
+
 .integrate {
   padding-top: 5%;
   padding-bottom: 5%;
@@ -1148,6 +1245,24 @@ footer .container .social-media {
   .integrate .img-holder {
     margin-bottom: 1rem;
   }
+}
+
+.dark-mode .integrate {
+  background-color: #0B0F19;
+}
+.dark-mode .integrate .grid {
+  background-color: #33354D;
+}
+@media (min-width: 768px) {
+  .dark-mode .integrate .grid {
+    background-color: #0B0F19;
+  }
+}
+.dark-mode .integrate .grid-item {
+  background-color: #0B0F19;
+}
+.dark-mode .integrate .grid-item:hover {
+  background-color: #151822;
 }
 
 .subscribe {
@@ -1302,6 +1417,10 @@ footer .container .social-media {
   color: #9397AD;
   display: flex;
   gap: 0.5rem;
+}
+
+.dark-mode .subscribe {
+  background-color: #151822;
 }
 
 .all-courses h1 {
@@ -1514,6 +1633,199 @@ footer .container .social-media {
   }
 }
 
+.dark-mode .all-courses .input-wrapper input, .dark-mode .all-courses .input-wrapper button {
+  background-color: #191D27;
+  border-color: #75777D;
+}
+.dark-mode .all-courses i {
+  color: #FFFFFF;
+}
+.dark-mode .all-courses .grid-item {
+  background-color: #191D27;
+}
+.dark-mode .all-courses .grid-item h5 {
+  color: #FFFFFF;
+}
+.dark-mode .all-courses .grid-item p {
+  color: #B4B7C9;
+}
+.dark-mode .all-courses .bottom-content {
+  background-color: #191D27;
+}
+
+.contact {
+  background-color: #F3F6FF;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+@media (min-width: 992px) {
+  .contact {
+    padding-bottom: 8rem;
+  }
+}
+.contact .content-container {
+  padding-top: 2rem;
+  display: flex;
+}
+@media (min-width: 768px) {
+  .contact .content-container {
+    position: relative;
+  }
+}
+.contact .text-s {
+  color: #9397AD;
+}
+.contact .contact-container {
+  display: none;
+}
+@media (min-width: 768px) {
+  .contact .contact-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 50%;
+  }
+  .contact .contact-container h1 {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    color: #0B0F19;
+    font-size: 28px !important;
+  }
+}
+@media (min-width: 768px) and (min-width: 992px) {
+  .contact .contact-container h1 {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    color: #0B0F19;
+    font-size: 40px !important;
+  }
+}
+@media (min-width: 992px) {
+  .contact .contact-container {
+    width: 30%;
+  }
+}
+.contact .content-holder {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 0.1fr 0.9fr;
+  grid-template-areas: "icon title" "icon text" "icon link";
+}
+.contact .content-holder h4 {
+  grid-area: title;
+  justify-content: center;
+}
+.contact .content-holder p {
+  grid-area: text;
+  font-size: 14px;
+}
+@media (min-width: 992px) {
+  .contact .content-holder p {
+    font-size: 16px;
+  }
+}
+.contact .content-holder a {
+  grid-area: link;
+}
+.contact .content-holder a i {
+  padding-left: 0.5rem;
+}
+.contact .content-holder .icon-holder {
+  grid-area: icon;
+}
+.contact .content-holder .icon-holder i {
+  color: #6366F1;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  padding: 0.8rem;
+  font-size: 20px;
+}
+.contact .form-holder {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  width: 100%;
+  padding: 1rem;
+  box-shadow: 0px 4px 9px -1px rgba(19, 16, 34, 0.03), 0px 4.4px 20px -1px rgba(19, 16, 34, 0.05);
+}
+.contact .form-holder h2 {
+  line-height: 160%;
+  font-weight: 400;
+  color: #565973;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  color: #0B0F19;
+  font-size: 24px !important;
+}
+@media (min-width: 768px) {
+  .contact .form-holder {
+    padding: 2rem;
+    position: absolute;
+    width: 50%;
+    right: 0;
+    z-index: 2;
+  }
+  .contact .form-holder h2 {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    color: #0B0F19;
+    font-size: 24px !important;
+  }
+}
+@media (min-width: 992px) {
+  .contact .form-holder {
+    padding: 4rem;
+    width: 50%;
+  }
+  .contact .form-holder h2 {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    color: #0B0F19;
+    font-size: 32px !important;
+  }
+}
+.contact form {
+  display: grid;
+  gap: 1.5rem;
+}
+.contact form textarea {
+  height: 100px;
+}
+@media (min-width: 992px) {
+  .contact form textarea {
+    height: 200px;
+  }
+}
+.contact input, .contact textarea {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px #D4D7E5 solid;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  resize: none;
+}
+
+.dark-mode .contact .content-holder .icon-holder i {
+  background-color: #000000;
+}
+.dark-mode .contact .form-holder {
+  background-color: #000000;
+}
+.dark-mode .contact .form-holder label {
+  color: #FFFFFF;
+}
+
 .sign-in h1 {
   line-height: 160%;
   font-weight: 400;
@@ -1681,7 +1993,7 @@ footer .container .social-media {
 }
 .account-details .nav-holder {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   width: 100%;
   justify-content: space-evenly;
 }
@@ -1690,6 +2002,16 @@ footer .container .social-media {
 }
 .account-details .nav-holder i {
   font-size: 22px;
+}
+.account-details .nav-holder a {
+  padding: 0.7rem;
+  border-radius: 5px;
+  color: #000000;
+  width: 96%;
+}
+.account-details .nav-holder .active {
+  background-color: #6366F1;
+  color: #FFFFFF;
 }
 @media (min-width: 768px) {
   .account-details .nav-holder span {
@@ -1939,4 +2261,14 @@ footer .container .social-media {
   font-family: "Manrope", sans-serif;
   font-size: 14px !important;
   color: #9397AD;
+}
+
+.dark-mode .saved-courses-container .grid-item {
+  background-color: #191D27;
+}
+.dark-mode .saved-courses-container .grid-item h5 {
+  color: #FFFFFF;
+}
+.dark-mode .saved-courses-container .grid-item p {
+  color: #B4B7C9;
 }

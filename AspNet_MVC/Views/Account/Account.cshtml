@@ -7,12 +7,13 @@
                 <p>firstname.lastname@mail.com</p>
             </div>
             <div class="nav-holder">
-                <a asp-action="ChangePartialView" asp-route-partialViewName="Details"><i class="fa-light fa-gear"></i><span>Account details</span></a>
-                <a asp-action="ChangePartialView" asp-route-partialViewName="Security"><i class="fa-light fa-lock"></i><span>Security</span></a>
-                <a asp-action="ChangePartialView" asp-route-partialViewName="Courses"><i class="fa-sharp fa-light fa-bookmark"></i><span>Saved Courses</span></a>
-                <a asp-controller="Authentication" asp-action="SignOut"><i class="fa-light fa-arrow-right-from-bracket"></i><span>Sign Out</span></a>
+                <a class="profile-link" asp-action="ChangePartialView" asp-route-partialViewName="Details"><i class="fa-light fa-gear"></i><span>Account details</span></a>
+                <a class="profile-link" asp-action="ChangePartialView" asp-route-partialViewName="Security"><i class="fa-light fa-lock"></i><span>Security</span></a>
+                <a class="profile-link" asp-action="ChangePartialView" asp-route-partialViewName="Courses"><i class="fa-sharp fa-light fa-bookmark"></i><span>Saved Courses</span></a>
+                <a class="profile-link" asp-controller="Authentication" asp-action="SignOut"><i class="fa-light fa-arrow-right-from-bracket"></i><span>Sign Out</span></a>
             </div>
         </div>
         @await Component.InvokeAsync("Account", ViewBag.PartialViewName)
     </div>
 </section>
+<script src="~/js/account-links.js"></script>

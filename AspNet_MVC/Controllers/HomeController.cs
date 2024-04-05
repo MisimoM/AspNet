@@ -1,9 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Presentation.ViewModels;
+using System.Text;
 
 namespace Presentation.Controllers
 {
-	public class HomeController : Controller
+	public class HomeController(HttpClient httpClient) : Controller
 	{
+		private readonly HttpClient _httpClient = httpClient;
 		public IActionResult Index()
 		{
 			ViewData["Title"] = "Home";
@@ -15,9 +19,50 @@ namespace Presentation.Controllers
 			return View();
 		}
 
-        public IActionResult Courses()
+        public async Task<IActionResult> Courses()
         {
-            return View();
+			var viewModel = new CourseIndexViewModel();
+
+			var response = await _httpClient.GetAsync("https://localhost:7002/api/Courses");
+			
+			if (response.IsSuccessStatusCode)
+			{
+				viewModel.Courses = JsonConvert.DeserializeObject<IEnumerable<CourseViewModel>>(await response.Content.ReadAsStringAsync())!;
+			}
+
+            return View(viewModel);
         }
+
+		[HttpPost]
+		public async Task<IActionResult> Index(SubscriberViewModel viewModel)
+		{
+			if (ModelState.IsValid)
+			{
+				try
+				{
+                    var content = new StringContent(JsonConvert.SerializeObject(viewModel), Encoding.UTF8, "application/json");
+                    var response = await _httpClient.PostAsync("https://localhost:7002/api/Subscriber", content);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        ViewData["Status"] = "Success";
+                    }
+                    else if (response.StatusCode == System.Net.HttpStatusCode.Conflict)
+                    {
+                        ViewData["Status"] = "AlreadyExists";
+                    }
+                }
+				catch
+				{
+                    ViewData["Status"] = "ConnectionFailed";
+                }
+			}
+			else
+			{
+				ViewData["Status"] = "Invalid";
+			}
+
+			return View(viewModel);
+		}
     }
 }

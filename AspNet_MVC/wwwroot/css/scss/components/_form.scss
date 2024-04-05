@@ -5,30 +5,60 @@ form {
         border: 1px $gray-400 solid;
         padding: 0.7rem 0 0.7rem 1rem;
 
-        &.input-validation-error {
+        &.field-validation-error {
             border: 1px $danger solid;
         }
 
-        &.input-validation-valid {
+        &.field-validation-valid {
             border: 1px $success solid;
         }
     }
 
     span {
-        height: 1.25rem;
+
+        &.field-validation-error {
+
+            @include text-xs;
+            color: $danger;
+        }
     }
 
-    .field-validation-error {
-        @include text-xs;
-        color: $danger;
+    .form-group {
+        display: grid;
+        gap: 0.5rem;
+
+        label {
+            font-weight: 600;
+        }
+    }
+
+    .form-group-checkbox {
+        display: flex;
+        gap: 0.5rem;
+        width: 100%;
     }
 }
 
-.form-group {
-    display: grid;
-}
+.dark-mode {
 
-.form-group-checkbox {
-    display: flex;
-    gap: 0.5rem;
+    form {
+        input, textarea {
+            background-color: #191D27;
+            border-color: #75777D;
+        }
+    }
+
+    .form-group {
+
+        label {
+            color: $white;
+        }
+    }
+
+    .form-group-checkbox {
+
+        label {
+            color: $gray-500;
+        }
+    }
 }

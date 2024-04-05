@@ -3,69 +3,134 @@
     padding-top: 3rem;
     padding-bottom: 3rem;
 
+    @include lg {
+        padding-bottom: 8rem;
+    }
+
+    .content-container {
+        padding-top: 2rem;
+        display: flex;
+
+        @include md {
+            position: relative;
+        }
+    }
+
     .text-s {
         color: $gray-600;
     }
 
     .contact-container {
-        position: relative;
+        display: none;
 
-        h1 {
-            padding-top: 3rem;
-            padding-bottom: 3rem;
+        @include md {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            width: 50%;
+
+            h1 {
+                @include h3;
+
+                @include lg {
+                    @include h1;
+                }
+            }
+        }
+
+        @include lg {
+            width: 30%;
         }
     }
 
     .content-holder {
-        display: flex;
-        gap: 1.5rem;
-        width: 33%;
-        padding-bottom: 3rem;
-    }
-
-    .icon-holder {
-        
-        i {
-            font-size: 120%;
-            padding: 1rem;
-            background-color: $white;
-            border-radius: 25px;
-            color: $theme;
-        }
-    }
-
-    .text-holder {
-        display: flex;
-        flex-direction: column;
+        display: grid;
         gap: 1rem;
+        grid-template-columns: 0.1fr 0.9fr;
+        grid-template-areas:
+            "icon title" "icon text" "icon link";
 
-        span {
-            color: $theme;
+        h4 {
+            grid-area: title;
+            justify-content: center;
+        }
+
+        p {
+            grid-area: text;
+            font-size: 14px;
+
+            @include lg {
+                font-size: 16px;
+            }
+        }
+
+        a {
+            grid-area: link;
+
+            i {
+                padding-left: 0.5rem;
+            }
+        }
+
+        .icon-holder {
+            grid-area: icon;
+
+            i {
+                color: $theme;
+                background-color: $white;
+                border-radius: 50%;
+                padding: 0.8rem;
+                font-size: 20px;
+
+                @include lg {
+                }
+            }
         }
     }
 
     .form-holder {
-        padding: 4rem;
-        width: 32%;
         background-color: $white;
-        position: absolute;
-        top: 20%;
-        right: 15%;
-        border-radius: 1%;
+        border-radius: 10px;
+        width: 100%;
+        padding: 1rem;
         @include shadow-m;
+
+        h2 {
+            @include h4;
+        }
+
+        @include md {
+            padding: 2rem;
+            position: absolute;
+            width: 50%;
+            right: 0;
+            z-index: 2;
+
+            h2 {
+                @include h4;
+            }
+        }
+
+        @include lg {
+            padding: 4rem;
+            width: 50%;
+
+            h2 {
+                @include h2;
+            }
+        }
     }
 
     form {
-        display: flex;
-        flex-direction: column;
+        display: grid;
         gap: 1.5rem;
 
-        button {
-            width: 50%;
-        }
-
         textarea {
-            height: 200px;
+            height: 100px;
+
+            @include lg {
+                height: 200px;
+            }
         }
     }
 
@@ -76,5 +141,28 @@
         padding-top: 0.7rem;
         padding-bottom: 0.7rem;
         resize: none;
+    }
+}
+
+.dark-mode {
+    .contact {
+
+        .content-holder {
+
+            .icon-holder {
+
+                i {
+                    background-color: $black;
+                }
+            }
+        }
+
+        .form-holder {
+            background-color: $black;
+
+            label {
+                color: $white;
+            }
+        }
     }
 }

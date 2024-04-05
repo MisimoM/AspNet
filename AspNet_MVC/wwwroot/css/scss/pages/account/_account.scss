@@ -36,7 +36,7 @@
 
     .nav-holder {
         display: flex;
-        gap: 2rem;
+        gap: 1rem;
         width: 100%;
         justify-content: space-evenly;
 
@@ -46,6 +46,18 @@
 
         i {
             font-size: 22px;
+        }
+
+        a {
+            padding: 0.7rem;
+            border-radius: 5px;
+            color: $black;
+            width: 96%;
+        }
+
+        .active {
+            background-color: $theme;
+            color: $white;
         }
 
         @include md {
