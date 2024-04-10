@@ -4,6 +4,10 @@ namespace Infrastructure.Entities
 {
     public class UserEntity : IdentityUser
     {
+        public string ProfileImage { get; set; } = "profile-image.png";
+
+        public string? Bio {  get; set; }
+
         [ProtectedPersonalData]
         public string FirstName { get; set; } = null!;
         

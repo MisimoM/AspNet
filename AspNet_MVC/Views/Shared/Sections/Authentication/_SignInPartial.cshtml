@@ -10,7 +10,7 @@
                 <h1>Welcome Back</h1>
                 <p>Don't have an account yet? <a asp-controller="Authentication" asp-action="SignUp">Sign up here.</a></p>
             </div>
-            <form class="sign-in-form" asp-controller="Authentication" asp-action="SignIn">
+            <form class="sign-in-form" asp-controller="Authentication" asp-action="SignIn" asp-route-ReturnUrl="@ViewData["returnUrl"]" novalidate>
                 
                 <div class="form-group">
                     <label asp-for="Form.Email"></label>

@@ -9,10 +9,8 @@ namespace Presentation.Shared.Components.AccountComponents
 
             if (string.IsNullOrEmpty(partialViewName))
             {
-                // Default behavior: render the "UserDetails" partial view
                 return View("Details");
             }
-
 
             return View(partialViewName);
         }

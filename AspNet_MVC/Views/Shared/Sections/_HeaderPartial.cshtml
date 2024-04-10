@@ -8,7 +8,7 @@
 			<a class="menu-link" asp-controller="Home" asp-action="Index" asp-fragment="overview">Overview</a>
 			@if (_signInManager.IsSignedIn(User))
 			{
-				<a class="menu-link" asp-controller="Home" asp-action="Courses">Courses</a>
+				<a class="menu-link" asp-controller="Courses" asp-action="Courses">Courses</a>
 			}
 			else
 			{

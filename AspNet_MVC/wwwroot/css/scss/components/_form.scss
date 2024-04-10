@@ -46,6 +46,23 @@ form {
             background-color: #191D27;
             border-color: #75777D;
         }
+
+        &.field-validation-error {
+            border: 1px $danger solid;
+        }
+
+        &.field-validation-valid {
+            border: 1px $success solid;
+        }
+    }
+
+    span {
+
+        &.field-validation-error {
+
+            @include text-xs;
+            color: $danger;
+        }
     }
 
     .form-group {

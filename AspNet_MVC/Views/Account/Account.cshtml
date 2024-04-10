@@ -1,10 +1,12 @@
-﻿<section class="account-details">
+﻿@model AccountViewModel;
+
+<section class="account-details">
     <div class="container">
         <div class="profile-container">
             <div class="profile">
-                <img src="~images/profile-image.png" alt="">
-                <h5>FirstName LastName</h5>
-                <p>firstname.lastname@mail.com</p>
+                <img src="~/images/account/@Model.Profile.ProfileImage" alt="">
+                <h5>@Model.Profile.FirstName @Model.Profile.LastName</h5>
+                <p>@Model.Profile.Email</p>
             </div>
             <div class="nav-holder">
                 <a class="profile-link" asp-action="ChangePartialView" asp-route-partialViewName="Details"><i class="fa-light fa-gear"></i><span>Account details</span></a>

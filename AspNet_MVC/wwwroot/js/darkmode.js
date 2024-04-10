@@ -14,7 +14,7 @@ const enableDarkMode = () => {
     updateImageSource('logo-img', '/images/header/logo-dark.svg');
     updateImageSource('appstore', '/images/home/app/appstore-dark.svg');
     updateImageSource('googleplay', '/images/home/app/googleplay-dark.svg');
-    updateImageSource('404page', '/images/home/404-dark.svg');
+    updateImageSource('404page', '/images/home/404page/404-dark.svg');
   
   localStorage.setItem('darkMode', 'enabled');
 }
@@ -25,7 +25,7 @@ const disableDarkMode = () => {
     updateImageSource('logo-img', '/images/header/logo-light.svg');
     updateImageSource('appstore', '/images/home/app/appstore-light.svg');
     updateImageSource('googleplay', '/images/home/app/googleplay-light.svg');
-    updateImageSource('404page', '/images/home/404-light.svg');
+    updateImageSource('404page', '/images/home/404page/404-light.svg');
 
   localStorage.setItem('darkMode', null);
 }

@@ -1,21 +1,23 @@
-﻿<div class="security-container">
+﻿@model AccountViewModel;
+
+<div class="security-container">
     <h2>Security</h2>
     <div>
         <h5>Password</h5>
         <form class="password">
             <div class="form-group">
-                <label for="">Current password</label>
-                <input type="text" name="" placeholder="***">
+                <label asp-for="Security.CurrentPassword"></label>
+                <input type="password" asp-for="Security.CurrentPassword">
             </div>
 
             <div class="form-group">
-                <label for="">New password</label>
-                <input type="text" name="" placeholder="***">
+                <label asp-for="Security.NewPassword"></label>
+                <input type="password" asp-for="Security.NewPassword">
             </div>
 
             <div class="form-group">
-                <label for="">Confirm password</label>
-                <input type="text" name="" placeholder="***">
+                <label asp-for="Security.ConfirmPassword"></label>
+                <input type="password" asp-for="Security.ConfirmPassword">
             </div>
 
             <div class="btn-holder">

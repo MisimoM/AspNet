@@ -1,0 +1,30 @@
+﻿.missing-page {
+
+    .container {
+        display: grid;
+        place-items: center;
+        gap: 1rem;
+
+        h2 {
+            @include h3;
+        }
+
+        @include md {
+            h2 {
+                @include h1;
+            }
+        }
+
+        @include lg {
+            width: 40%;
+
+            h2 {
+                @include d5;
+            }
+        }
+
+        img {
+            width: 60%;
+        }
+    }
+}

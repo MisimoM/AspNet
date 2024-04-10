@@ -19,19 +19,8 @@ namespace Presentation.Controllers
 			return View();
 		}
 
-        public async Task<IActionResult> Courses()
-        {
-			var viewModel = new CourseIndexViewModel();
-
-			var response = await _httpClient.GetAsync("https://localhost:7002/api/Courses");
-			
-			if (response.IsSuccessStatusCode)
-			{
-				viewModel.Courses = JsonConvert.DeserializeObject<IEnumerable<CourseViewModel>>(await response.Content.ReadAsStringAsync())!;
-			}
-
-            return View(viewModel);
-        }
+		[Route("/error")]
+		public ActionResult Error404(int statusCode) => View();
 
 		[HttpPost]
 		public async Task<IActionResult> Index(SubscriberViewModel viewModel)

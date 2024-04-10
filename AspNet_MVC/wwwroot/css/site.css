@@ -439,6 +439,20 @@ form .form-group-checkbox {
   background-color: #191D27;
   border-color: #75777D;
 }
+.dark-mode form.field-validation-error {
+  border: 1px #EF4444 solid;
+}
+.dark-mode form.field-validation-valid {
+  border: 1px #22C55E solid;
+}
+.dark-mode span.field-validation-error {
+  line-height: 160%;
+  font-weight: 400;
+  color: #565973;
+  font-family: "Manrope", sans-serif;
+  font-size: 12px !important;
+  color: #EF4444;
+}
 .dark-mode .form-group label {
   color: #FFFFFF;
 }
@@ -1421,6 +1435,49 @@ footer .container .social-media {
 
 .dark-mode .subscribe {
   background-color: #151822;
+}
+
+.missing-page .container {
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+}
+.missing-page .container h2 {
+  line-height: 160%;
+  font-weight: 400;
+  color: #565973;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  color: #0B0F19;
+  font-size: 28px !important;
+}
+@media (min-width: 768px) {
+  .missing-page .container h2 {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    color: #0B0F19;
+    font-size: 40px !important;
+  }
+}
+@media (min-width: 992px) {
+  .missing-page .container {
+    width: 40%;
+  }
+  .missing-page .container h2 {
+    line-height: 160%;
+    font-weight: 400;
+    color: #565973;
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    color: #0B0F19;
+    font-size: 48px !important;
+  }
+}
+.missing-page .container img {
+  width: 60%;
 }
 
 .all-courses h1 {

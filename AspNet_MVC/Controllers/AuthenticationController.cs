@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using Infrastructure.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Authentication;
 
 namespace Presentation.Controllers
 {
@@ -49,20 +48,27 @@ namespace Presentation.Controllers
 
         [HttpGet]
         [Route("/SignIn")]
-        public IActionResult SignIn()
+        public IActionResult SignIn(string returnUrl)
         {
+            if (_signInManager.IsSignedIn(User))
+                return RedirectToAction("Account", "Account");
+
+            ViewData["ReturnUrl"] = returnUrl ?? Url.Content("~/");
             return View(new SignInViewModel());
         }
 
         [HttpPost]
         [Route("/SignIn")]
-        public async Task<IActionResult> SignIn(SignInViewModel viewModel)
+        public async Task<IActionResult> SignIn(SignInViewModel viewModel, string returnUrl)
         {
             if (ModelState.IsValid)
             {
                 var result = await _signInManager.PasswordSignInAsync(viewModel.Form.Email, viewModel.Form.Password, false, false);
                 if (result.Succeeded)
                 {
+                    if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+                        return Redirect(returnUrl);
+
                     return RedirectToAction("Account", "Account");
                 }
             }
