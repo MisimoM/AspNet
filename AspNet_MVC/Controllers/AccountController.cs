@@ -1,15 +1,18 @@
-﻿using Infrastructure.Entities;
+﻿using Business.Services;
+using Infrastructure.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Presentation.ViewModels.Account;
+using System.Net;
 
 namespace Presentation.Controllers
 {
     [Authorize]
-    public class AccountController(UserManager<UserEntity> userManager) : Controller
+    public class AccountController(UserManager<UserEntity> userManager, AddressService addressService) : Controller
     {
         private readonly UserManager<UserEntity> _userManager = userManager;
+        private readonly AddressService _addressService = addressService;
 
         [Route("/Account/Details")]
         public async Task<IActionResult> AccountAsync(AccountViewModel viewModel)
@@ -30,85 +33,143 @@ namespace Presentation.Controllers
             return View("Account", viewModel);
         }
 
+        [HttpPost]
+        [Route("/Account/Details")]
+        public async Task<IActionResult> UpdateDetails(AccountViewModel viewModel)
+        {
+
+            if (viewModel.Details.BasicInfo is not null)
+            {
+                if (
+                   viewModel.Details.BasicInfo.FirstName is not null &&
+                   viewModel.Details.BasicInfo.LastName is not null &&
+                   viewModel.Details.BasicInfo.Email is not null
+                   )
+                {
+                    var user = await _userManager.GetUserAsync(User);
+                    if (user is not null)
+                    {
+                        user.FirstName = viewModel.Details.BasicInfo.FirstName;
+                        user.LastName = viewModel.Details.BasicInfo.LastName;
+                        user.Email = viewModel.Details.BasicInfo.Email;
+                        user.PhoneNumber = viewModel.Details.BasicInfo.Phone;
+                        user.Bio = viewModel.Details.BasicInfo.Bio;
+
+                        //Updating these to be able to log in when changing email.
+
+                        user.NormalizedEmail = viewModel.Details.BasicInfo.Email;
+                        user.UserName = viewModel.Details.BasicInfo.Email;
+                        user.NormalizedUserName = viewModel.Details.BasicInfo.Email;
+
+                        var result = await _userManager.UpdateAsync(user);
+                        if (!result.Succeeded)
+                        {
+                            ModelState.AddModelError("IncorrectValues", "Something went wrong!");
+                        }
+                    }
+                }
+            }
+
+            if (viewModel.Details.Address is not null)
+            {
+                if (
+                    viewModel.Details.Address.AddressLine_1 is not null &&
+                    viewModel.Details.Address.PostalCode is not null &&
+                    viewModel.Details.Address.City is not null
+                    )
+                {
+                    var user = await _userManager.GetUserAsync(User);
+                    if (user!.AddressId is null)
+                    {
+                        var addressEntity = new AddressEntity
+                        {
+                            AddressLine_1 = viewModel.Details.Address.AddressLine_1,
+                            AddressLine_2 = viewModel.Details.Address.AddressLine_2,
+                            PostalCode = viewModel.Details.Address.PostalCode,
+                            City = viewModel.Details.Address.City
+                        };
+
+                        await _addressService.CreateAddressAsync(addressEntity);
+
+                        user.AddressId = addressEntity.Id;
+
+                        await _userManager.UpdateAsync(user);
+                    }
+                    else
+                    {
+                        await _addressService.GetAddressAsync(user.AddressId);
+
+                        user.Address!.AddressLine_1 = viewModel.Details.Address.AddressLine_1;
+                        user.Address.AddressLine_2 = viewModel.Details.Address.AddressLine_2;
+                        user.Address.PostalCode = viewModel.Details.Address.PostalCode;
+                        user.Address.City = viewModel.Details.Address.City;
+
+                        await _userManager.UpdateAsync(user);
+                    }
+                }
+            }
+
+            viewModel = await PopulateAccountInfoAsync();
+
+            return View("Account", viewModel);
+        }
+
         private async Task<AccountViewModel> PopulateAccountInfoAsync()
         {
             var user = await _userManager.GetUserAsync(User);
-            if (user is not null)
+            
+            if (user is null)
             {
-                return new AccountViewModel
-                {
-                    Profile = await PopulateProfileAsync(),
-                    Details = await PopulateDetailsAsync()
-                };
+                return null!;
             }
 
-            return null!;
-        }
-
-        private async Task<DetailsViewModel> PopulateDetailsAsync()
-        {
-            var user = await _userManager.GetUserAsync(User);
-            if (user is not null)
+            var accountViewModel = new AccountViewModel
             {
-                return new DetailsViewModel
-                {
-                    BasicInfo = await PopulateBasicInfoAsync(),
-                    //Address = await PopulateAddressInfoAsync()
-                };
-            }
-
-            return null!;
-        }
-
-        private async Task<BasicInfoViewModel> PopulateBasicInfoAsync()
-        {
-            var user = await _userManager.GetUserAsync(User);
-            if (user is not null)
-            {
-                return new BasicInfoViewModel
-                {
-                    FirstName = user.FirstName,
-                    LastName = user.LastName,
-                    Email = user.Email!,
-                    Phone = user.PhoneNumber!,
-                    Bio = user.Bio!
-                };
-            }
-
-            return null!;
-        }
-
-        //private async Task<AddressViewModel> PopulateAddressInfoAsync()
-        //{
-        //    var user = await _userManager.GetUserAsync(User);
-        //    if (user is not null)
-        //    {
-        //        return new AddressViewModel
-        //        {
-        //            AddressLine_1 = user.Address!.StreetLine_1,
-        //            AddressLine_2 = user.Address.StreetLine_2!,
-        //            PostalCode = user.Address.PostalCode,
-        //            City = user.Address.City
-        //        };
-        //    }
-
-        //    return null!;
-        //}
-
-        private async Task<ProfileViewModel> PopulateProfileAsync()
-        {
-            var user = await _userManager.GetUserAsync(User);
-            if (user is not null)
-            {
-                return new ProfileViewModel
+                Profile = new ProfileViewModel
                 {
                     ProfileImage = user.ProfileImage,
                     FirstName = user.FirstName,
                     LastName = user.LastName,
-                    Email = user.Email!,
+                    Email = user.Email!
+                },
+                Details = new DetailsViewModel
+                {
+                    BasicInfo = new BasicInfoViewModel
+                    {
+                        FirstName = user.FirstName,
+                        LastName = user.LastName,
+                        Email = user.Email!,
+                        Phone = user.PhoneNumber!,
+                        Bio = user.Bio!
+                    },
+                }
+            };
+
+            var userAddress = await _addressService.GetAddressAsync(user.AddressId);
+
+            if (userAddress is null)
+            {
+                accountViewModel.Details.Address = new AddressViewModel
+                {
+                    AddressLine_1 = string.Empty,
+                    AddressLine_2 = string.Empty,
+                    PostalCode = string.Empty,
+                    City = string.Empty
+                };
+
+            }
+            else
+            {
+                accountViewModel.Details.Address = new AddressViewModel
+                {
+                    AddressLine_1 = user.Address!.AddressLine_1,
+                    AddressLine_2 = user.Address.AddressLine_2!,
+                    PostalCode = user.Address.PostalCode,
+                    City = user.Address.City
                 };
             }
-            return null!;
+
+            return accountViewModel;
         }
     }
 }

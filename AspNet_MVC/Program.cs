@@ -1,11 +1,15 @@
+using Business.Services;
 using Infrastructure.Contexts;
 using Infrastructure.Entities;
+using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Presentation.Helpers.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient();
+builder.Services.AddScoped<AddressRepository>();
+builder.Services.AddScoped<AddressService>();
 builder.Services.AddDbContext<UserDbContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("UserDatabase")));
 builder.Services.AddDefaultIdentity<UserEntity>(x =>
 {

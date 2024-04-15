@@ -4,7 +4,7 @@
     <h2>Account Details</h2>
     <div>
         <h5>Basic Info</h5>
-        <form class="basic-info">
+        <form class="basic-info" method="post" asp-controller="Account" asp-action="UpdateDetails" novalidate>
 
             <div class="form-group">
                 <label asp-for="Details.BasicInfo.FirstName"></label>
@@ -33,14 +33,14 @@
 
             <div class="btn-holder">
                 <button class="btn-gray">Cancel</button>
-                <button class="btn-theme">Save Changes</button>
+                <button class="btn-theme" type="submit">Save Changes</button>
             </div>
         </form>
     </div>
 
     <div>
         <h5>Address</h5>
-        <form id="address">
+        <form id="address" asp-controller="Account" asp-action="UpdateDetails" novalidate>
 
             <div class="form-group">
                 <label asp-for="Details.Address.AddressLine_1"></label>
@@ -64,7 +64,7 @@
 
             <div class="btn-holder">
                 <button class="btn-gray">Cancel</button>
-                <button class="btn-theme">Save Changes</button>
+                <button class="btn-theme" type="submit">Save Changes</button>
             </div>
         </form>
     </div>
