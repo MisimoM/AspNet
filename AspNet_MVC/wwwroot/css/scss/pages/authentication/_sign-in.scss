@@ -31,6 +31,10 @@
     .sign-in-form {
         display: grid;
         gap: 1rem;
+
+        .field-error {
+            text-align: center;
+        }
     }
 
     a {

@@ -5,19 +5,19 @@ form {
         border: 1px $gray-400 solid;
         padding: 0.7rem 0 0.7rem 1rem;
 
-        &.field-validation-error {
+        &.input-validation-error {
             border: 1px $danger solid;
         }
 
-        &.field-validation-valid {
+        &.input-validation-valid {
             border: 1px $success solid;
         }
     }
 
     span {
+        height: 1rem;
 
         &.field-validation-error {
-
             @include text-xs;
             color: $danger;
         }
@@ -47,35 +47,35 @@ form {
             border-color: #75777D;
         }
 
-        &.field-validation-error {
+        &.input-validation-error {
             border: 1px $danger solid;
         }
 
-        &.field-validation-valid {
+        &.input-validation-valid {
             border: 1px $success solid;
         }
-    }
 
-    span {
+        span {
 
-        &.field-validation-error {
+            &.field-validation-error {
 
-            @include text-xs;
-            color: $danger;
+                @include text-xs;
+                color: $danger;
+            }
         }
-    }
 
-    .form-group {
+        .form-group {
 
-        label {
-            color: $white;
+            label {
+                color: $white;
+            }
         }
-    }
 
-    .form-group-checkbox {
+        .form-group-checkbox {
 
-        label {
-            color: $gray-500;
+            label {
+                color: $gray-500;
+            }
         }
     }
 }

@@ -2,7 +2,7 @@
 
 <section class="subscribe">
     <div class="container">
-        <form asp-controller="Home" asp-action="Index" novalidate>
+        <form class="subscriber-form" asp-controller="Home" asp-action="Index" asp-fragment="Subscribe" novalidate>
             <h1>Don't Want to Miss Anything?</h1>
             <img src="~/images/home/subscribe/arrows.svg" alt="">
             <h5>Sign up for Newsletters</h5>
@@ -32,8 +32,11 @@
                 </div>
             </div>
             <input class="email-input" asp-for="Email">
+            <span asp-validation-for="Email"></span>
             <button class="btn-theme" type="submit">Subscribe*</button>
             <p class="text-s terms-text">*Yes, I agree to the <a href="#">terms</a> and <a href="#">privacy policy</a></p>
         </form>
     </div>
 </section>
+
+<script src="~/js/Validation/SubscriberValidation.js"></script>

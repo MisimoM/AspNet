@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Presentation.ViewModels.Account;
-using System.Net;
 
 namespace Presentation.Controllers
 {
@@ -38,7 +37,7 @@ namespace Presentation.Controllers
         public async Task<IActionResult> UpdateDetails(AccountViewModel viewModel)
         {
 
-            if (viewModel.Details.BasicInfo is not null)
+            if (viewModel.Details!.BasicInfo is not null)
             {
                 if (
                    viewModel.Details.BasicInfo.FirstName is not null &&
@@ -55,8 +54,7 @@ namespace Presentation.Controllers
                         user.PhoneNumber = viewModel.Details.BasicInfo.Phone;
                         user.Bio = viewModel.Details.BasicInfo.Bio;
 
-                        //Updating these to be able to log in when changing email.
-
+                        //För att kunna ändra email/username och logga in.
                         user.NormalizedEmail = viewModel.Details.BasicInfo.Email;
                         user.UserName = viewModel.Details.BasicInfo.Email;
                         user.NormalizedUserName = viewModel.Details.BasicInfo.Email;

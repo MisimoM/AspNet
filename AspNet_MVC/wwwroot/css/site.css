@@ -408,11 +408,14 @@ form input, form textarea {
   border: 1px #D4D7E5 solid;
   padding: 0.7rem 0 0.7rem 1rem;
 }
-form input.field-validation-error, form textarea.field-validation-error {
+form input.input-validation-error, form textarea.input-validation-error {
   border: 1px #EF4444 solid;
 }
-form input.field-validation-valid, form textarea.field-validation-valid {
+form input.input-validation-valid, form textarea.input-validation-valid {
   border: 1px #22C55E solid;
+}
+form span {
+  height: 1rem;
 }
 form span.field-validation-error {
   line-height: 160%;
@@ -439,13 +442,13 @@ form .form-group-checkbox {
   background-color: #191D27;
   border-color: #75777D;
 }
-.dark-mode form.field-validation-error {
+.dark-mode form.input-validation-error {
   border: 1px #EF4444 solid;
 }
-.dark-mode form.field-validation-valid {
+.dark-mode form.input-validation-valid {
   border: 1px #22C55E solid;
 }
-.dark-mode span.field-validation-error {
+.dark-mode form span.field-validation-error {
   line-height: 160%;
   font-weight: 400;
   color: #565973;
@@ -453,10 +456,10 @@ form .form-group-checkbox {
   font-size: 12px !important;
   color: #EF4444;
 }
-.dark-mode .form-group label {
+.dark-mode form .form-group label {
   color: #FFFFFF;
 }
-.dark-mode .form-group-checkbox label {
+.dark-mode form .form-group-checkbox label {
   color: #B4B7C9;
 }
 
@@ -1306,19 +1309,19 @@ footer .container .social-media {
 .subscribe form {
   display: grid;
   width: 90%;
-  gap: 1rem;
-  grid-template-areas: "title title" "signup image-arrow" "checkboxes checkboxes" "email email" "button button" "terms terms";
+  gap: 0.5rem;
+  grid-template-areas: "title title" "signup image-arrow" "checkboxes checkboxes" "email email" "error error" "button button" "terms terms";
 }
 @media (min-width: 576px) {
   .subscribe form {
-    grid-template-areas: "title image-arrow" "signup signup" "checkboxes checkboxes" "email email" "button button" "terms terms";
+    grid-template-areas: "title image-arrow" "signup signup" "checkboxes checkboxes" "email email" "error error" "button button" "terms terms";
   }
 }
 @media (min-width: 992px) {
   .subscribe form {
     width: 80%;
     grid-template-columns: 0.8fr 1fr 1fr 1fr;
-    grid-template-areas: "title title title image-arrow" "signup checkboxes checkboxes checkboxes" "signup checkboxes checkboxes checkboxes" "email email email button" "terms terms terms terms";
+    grid-template-areas: "title title title image-arrow" "signup checkboxes checkboxes checkboxes" "signup checkboxes checkboxes checkboxes" "email email email button" "error error error error" "terms terms terms terms";
   }
 }
 @media (min-width: 1200px) {
@@ -1386,6 +1389,9 @@ footer .container .social-media {
     grid-template-areas: "daily advertising week" "event startups podcasts";
   }
 }
+.subscribe form .checkbox-container label {
+  align-self: center;
+}
 .subscribe form .checkbox-container .box:nth-child(1) {
   grid-area: daily;
 }
@@ -1406,6 +1412,9 @@ footer .container .social-media {
 }
 .subscribe form .email-input {
   grid-area: email;
+}
+.subscribe form span {
+  grid-area: error;
 }
 .subscribe form .btn-theme {
   grid-area: button;
@@ -1933,6 +1942,9 @@ footer .container .social-media {
   display: grid;
   gap: 1rem;
 }
+.sign-in .sign-in-form .field-error {
+  text-align: center;
+}
 .sign-in a {
   text-align: center;
 }
@@ -2105,7 +2117,7 @@ footer .container .social-media {
 }
 .details-container form {
   display: grid;
-  gap: 1rem;
+  gap: 0.5rem;
   border-bottom: 1px solid #D4D7E5;
   padding-bottom: 2rem;
 }
@@ -2137,7 +2149,7 @@ footer .container .social-media {
   display: flex;
   gap: 1.5rem;
 }
-.details-container #address {
+.details-container .address-info {
   border: none;
 }
 

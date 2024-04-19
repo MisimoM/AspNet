@@ -4,12 +4,12 @@ namespace Presentation.ViewModels.Account
 {
     public class BasicInfoViewModel
     {
-        [Required(ErrorMessage = " Enter your first name")]
+        [Required(ErrorMessage = "\u26A0 first name is required")]
         [DataType(DataType.Text)]
         [Display(Name = "First name", Prompt = "Enter your first name")]
         public string FirstName { get; set; } = null!;
 
-        [Required(ErrorMessage = " Enter your last name")]
+        [Required(ErrorMessage = "\u26A0 last name is required")]
         [DataType(DataType.Text)]
         [Display(Name = "Last name", Prompt = "Enter your last name")]
         public string LastName { get; set; } = null!;
@@ -21,11 +21,11 @@ namespace Presentation.ViewModels.Account
         public string Email { get; set; } = null!;
 
         [DataType(DataType.Text)]
-        [Display(Name = "Phone", Prompt = "Enter your phone")]
+        [Display(Name = "Phone (optional)", Prompt = "Enter your phone")]
         public string? Phone { get; set; }
 
         [DataType(DataType.Text)]
-        [Display(Name = "Bio", Prompt = "Add a short bio...")]
+        [Display(Name = "Bio (optional)", Prompt = "Add a short bio...")]
         public string? Bio { get; set; }
     }
 }

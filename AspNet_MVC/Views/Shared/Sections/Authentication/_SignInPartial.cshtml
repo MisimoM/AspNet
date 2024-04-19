@@ -15,11 +15,13 @@
                 <div class="form-group">
                     <label asp-for="Form.Email"></label>
                     <input asp-for="Form.Email" />
+                    <span asp-validation-for="Form.Email"></span>
                 </div>
                 
                 <div class="form-group">
                     <label asp-for="Form.Password"></label>
                     <input asp-for="Form.Password" />
+                    <span asp-validation-for="Form.Password"></span>
                 </div>
 
                 <div class="form-group-checkbox">
@@ -27,7 +29,7 @@
                     <label asp-for="Form.RememberMe"></label>
                 </div>
 
-                <span class="field-validation-error">@Model.ErrorMessage</span>
+                <span class="field-validation-error field-error">@Model.ErrorMessage</span>
                
                 <button class="btn-theme" type="submit">@Model.Title</button>
                 <a href="">Forgot your password?</a>
@@ -35,3 +37,5 @@
         </div>
     </div>
 </section>
+
+<script src="~/js/Validation/SignInValidaton.js"></script>

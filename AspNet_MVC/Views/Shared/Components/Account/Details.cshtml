@@ -9,26 +9,31 @@
             <div class="form-group">
                 <label asp-for="Details.BasicInfo.FirstName"></label>
                 <input asp-for="Details.BasicInfo.FirstName" />
+                <span asp-validation-for="Details.BasicInfo.FirstName"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="Details.BasicInfo.LastName"></label>
                 <input asp-for="Details.BasicInfo.LastName" />
+                <span asp-validation-for="Details.BasicInfo.LastName"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="Details.BasicInfo.Email"></label>
                 <input asp-for="Details.BasicInfo.Email" />
+                <span asp-validation-for="Details.BasicInfo.Email"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="Details.BasicInfo.Phone"></label>
                 <input asp-for="Details.BasicInfo.Phone" />
+                <span></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="Details.BasicInfo.Bio"></label>
                 <textarea asp-for="Details.BasicInfo.Bio"></textarea>
+                <span></span>
             </div>
 
             <div class="btn-holder">
@@ -40,26 +45,30 @@
 
     <div>
         <h5>Address</h5>
-        <form id="address" asp-controller="Account" asp-action="UpdateDetails" novalidate>
+        <form class="address-info" asp-controller="Account" asp-action="UpdateDetails" novalidate>
 
             <div class="form-group">
                 <label asp-for="Details.Address.AddressLine_1"></label>
                 <input asp-for="Details.Address.AddressLine_1" />
+                <span asp-validation-for="Details.Address.AddressLine_1"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="Details.Address.AddressLine_2"></label>
                 <input asp-for="Details.Address.AddressLine_2" />
+                <span></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="Details.Address.PostalCode"></label>
                 <input asp-for="Details.Address.PostalCode" />
+                <span asp-validation-for="Details.Address.PostalCode"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="Details.Address.City"></label>
                 <input asp-for="Details.Address.City" />
+                <span asp-validation-for="Details.Address.City"></span>
             </div>
 
             <div class="btn-holder">
@@ -69,3 +78,6 @@
         </form>
     </div>
 </div>
+
+<script src="~/js/Validation/BasicInfoValidation.js"></script>
+<script src="~/js/Validation/AddressInfoValidation.js"></script>

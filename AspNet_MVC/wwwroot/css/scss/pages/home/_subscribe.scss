@@ -23,12 +23,13 @@
     form {
         display: grid;
         width: 90%;
-        gap: 1rem;
+        gap: 0.5rem;
         grid-template-areas:
         "title title"
         "signup image-arrow"
         "checkboxes checkboxes"
         "email email"
+        "error error"
         "button button"
         "terms terms";
 
@@ -38,6 +39,7 @@
             "signup signup"
             "checkboxes checkboxes"
             "email email"
+            "error error"
             "button button"
             "terms terms";
         }
@@ -50,6 +52,7 @@
             "signup checkboxes checkboxes checkboxes"
             "signup checkboxes checkboxes checkboxes"
             "email email email button"
+            "error error error error"
             "terms terms terms terms";
         }
 
@@ -95,6 +98,10 @@
                 "event startups podcasts";
             }
 
+            label {
+                align-self: center;
+            }
+
             .box:nth-child(1) {grid-area: daily;}
             .box:nth-child(2) {grid-area: event;}
             .box:nth-child(3) {grid-area: advertising;}
@@ -103,6 +110,11 @@
             .box:nth-child(6) {grid-area: podcasts;}
         }
         .email-input {grid-area: email;}
+
+        span {
+            grid-area: error;
+        }
+
         .btn-theme {
             grid-area: button;
             place-self: center;

@@ -30,13 +30,13 @@
 
                 <div class="form-group">
                     <label asp-for="Form.Password"></label>
-                    <input asp-for="Form.Password" />
+                    <input type="password" asp-for="Form.Password" />
                     <span asp-validation-for="Form.Password"></span>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="Form.ConfirmPassword"></label>
-                    <input asp-for="Form.ConfirmPassword" />
+                    <input type="password" asp-for="Form.ConfirmPassword" />
                     <span asp-validation-for="Form.ConfirmPassword"></span>
                 </div>
 
@@ -50,4 +50,6 @@
         </div>
     </div>
 </section>
+
+<script src="~/js/validation/SignUpValidation.js"></script>
 

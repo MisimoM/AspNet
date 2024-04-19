@@ -10,6 +10,8 @@ namespace Presentation.Controllers
     {
 
         private readonly HttpClient _httpClient = httpClient;
+
+        [Route("/Courses")]
         public async Task<IActionResult> Courses()
         {
             var viewModel = new CourseIndexViewModel();
